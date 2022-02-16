@@ -1,4 +1,4 @@
-import './App.css';
+import './Body.css';
 import NavBar from './NavBar/NavBar';
 function App() {
   return (
