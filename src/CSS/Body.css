@@ -1,5 +1,5 @@
 body {
-  background: rgb(253, 239, 244);
+  background: white;
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
@@ -22,16 +22,21 @@ a {
   text-decoration: none;
 }
 
-p {
-  background-color: rgb(255, 32, 99);
+.ButtonNav {
+  background-color: #FF2063;
   color: white;
   border-radius: 20px;
   padding: 0 20px;
-  font-size: 25px;
+  font-size: 19px;
   font-weight: 600;
 }
 
-p:hover {
-  transition: 0.5s;
-  transform: translateX(25px)
+p.ButtonNav:hover {
+  transition: 1s;
+  box-shadow: 1px 1px 29px -8px rgb(255,32,99);}
+
+
+svg {
+  margin: 0 10px;
+  color: #FF2063;
 }
