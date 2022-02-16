@@ -1,4 +1,4 @@
-.App {
+ /* .App {
   text-align: center;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #a4a7ad;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+} */
+body {
+  background: rgb(113,34,120);
+  background: linear-gradient(36deg, rgba(113,34,120,1) 27%, rgba(60,107,153,1) 84%);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#Nav {
+  padding: 0 200px;
+  margin: 20px 0;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: white;
+  font-size: 30px;
+}
+
+p:hover {
+  transition: 0.5s;
+  transform: translateX(25px)
 }
