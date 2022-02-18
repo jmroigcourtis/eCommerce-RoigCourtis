@@ -1,9 +1,13 @@
 body {
-  background: white;
+  background: #fce0e8;
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+h1 {
+  color: white;
 }
 
 #Nav {
@@ -22,13 +26,20 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-weight: bold;
+}
+
 .ButtonNav {
-  background-color: #FF2063;
-  color: white;
+  background-color: rgb(247,153,181);
   border-radius: 20px;
   padding: 0 20px;
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 20px;
+}
+
+p.ButtonNav {
+  font-weight: 700;
+  color: white;
 }
 
 p.ButtonNav:hover {
@@ -38,5 +49,17 @@ p.ButtonNav:hover {
 
 svg {
   margin: 0 10px;
-  color: #FF2063;
+  color: rgb(253, 115, 157);
+}
+
+.bannerList {
+  background: rgb(247,153,181);
+}
+
+.footer {
+  background: rgb(243, 106, 147);
+}
+
+.bi-github  {
+  color: white;
 }

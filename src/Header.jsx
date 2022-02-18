@@ -1,13 +1,15 @@
 import './CSS/Body.css';
 import NavBar from './NavBar/NavBar';
-function App() {
+
+function Header() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
       <NavBar/>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Header;
+
