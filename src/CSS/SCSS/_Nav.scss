@@ -1,0 +1,23 @@
+#Nav {
+    padding: 0 200px;
+    margin: 20px 0;
+}
+
+.ButtonNav {
+    background-color: rgb(247,153,181);
+    border-radius: 20px;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+p.ButtonNav{
+        font-weight: 700;
+        color: white;
+    }
+
+p.ButtonNav:hover {
+        transition: 1s;
+        box-shadow: 1px 1px 29px -8px rgb(255,32,99);
+    }
+
+

@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './CSS/Body.css';
-import Header from './Header';
-import ItemListContainer from './ItemListContainer/ItemListContainer';
-import Footer from './Footer';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <ItemListContainer />
-    <Footer/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

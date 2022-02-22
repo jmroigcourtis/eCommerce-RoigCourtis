@@ -1,0 +1,43 @@
+body {
+  background: #fce0e8;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+.bannerList {
+  background-color: #f799b5; }
+
+h1 {
+  color: white;
+  font-weight: bold; }
+
+#Nav {
+  padding: 0 200px;
+  margin: 20px 0; }
+
+.ButtonNav {
+  background-color: #f799b5;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 20px; }
+
+p.ButtonNav {
+  font-weight: 700;
+  color: white; }
+
+p.ButtonNav:hover {
+  transition: 1s;
+  box-shadow: 1px 1px 29px -8px #ff2063; }
+
+svg {
+  margin: 0 10px;
+  color: white; }
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
