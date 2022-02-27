@@ -8,6 +8,11 @@ body {
 .bannerList {
   background-color: #f799b5; }
 
+.loading {
+  margin: 40px;
+  padding: 10px;
+  background-color: #f85f8d; }
+
 h1 {
   color: white;
   font-weight: bold; }
@@ -41,6 +46,9 @@ ul {
 
 a {
   text-decoration: none; }
+
+.cards {
+  margin: 40px; }
 
 .footer {
   background-color: #f36a93; }
