@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { getFetch } from "../Item/Item";
-import ItemList from '../ItemList/ItemList'
+import { getFetch } from "../../Components/Helper/getFetch";
+import ItemList from '../../Components/ItemList/ItemList';
 
-const ItemListContainer = () => {
 
+const ItemListContainer = () => {        
         const [productos, setProductos] = useState([])
         const [loading, setLoading] = useState(true)
 
@@ -19,7 +19,7 @@ const ItemListContainer = () => {
         
         return ( 
         <>
-                {loading ? <h1 className="d-flex justify-content-center loading">Cargando</h1> : <ItemList productos = {productos}/>}
+                {loading ? <h1 className="d-flex justify-content-center loading">Cargando</h1> : <ItemList className="wow bounce" productos = {productos}/>}
         </>
         )
 }

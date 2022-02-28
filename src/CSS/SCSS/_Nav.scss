@@ -1,6 +1,5 @@
 #Nav {
-    padding: 0 200px;
-    margin: 20px 0;
+    padding: 10px 200px;
 }
 
 .ButtonNav {
@@ -10,14 +9,14 @@
     font-size: 20px;
 }
 
-p.ButtonNav{
+.NavP{
         font-weight: 700;
-        color: white;
+        color: rgb(245, 90, 90);
     }
 
-p.ButtonNav:hover {
+.NavP:hover {
         transition: 1s;
-        box-shadow: 1px 1px 29px -8px rgb(255,32,99);
+        color: 1px 1px 29px -8px rgb(255,32,99);
     }
 
 

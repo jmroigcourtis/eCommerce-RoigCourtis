@@ -9,17 +9,15 @@ body {
   background-color: #f799b5; }
 
 .loading {
-  margin: 40px;
-  padding: 10px;
-  background-color: #f85f8d; }
+  margin: 200px;
+  color: black; }
 
 h1 {
   color: white;
   font-weight: bold; }
 
 #Nav {
-  padding: 0 200px;
-  margin: 20px 0; }
+  padding: 10px 200px; }
 
 .ButtonNav {
   background-color: #f799b5;
@@ -27,13 +25,13 @@ h1 {
   padding: 0 20px;
   font-size: 20px; }
 
-p.ButtonNav {
+.NavP {
   font-weight: 700;
-  color: white; }
+  color: #f55a5a; }
 
-p.ButtonNav:hover {
+.NavP:hover {
   transition: 1s;
-  box-shadow: 1px 1px 29px -8px #ff2063; }
+  color: 1px 1px 29px -8px #ff2063; }
 
 svg {
   margin: 0 10px;
