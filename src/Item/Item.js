@@ -23,3 +23,4 @@ export const getFetch = new Promise ((resolve, reject) => {
             },2000)
         }
     })
+

@@ -2,6 +2,8 @@ import CartWidget from "../CartWidget/CartWidget";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
+import Iterate from "../Iterate/Iterate";
+import { Button } from "react-bootstrap";
 
 // const Navbar = () => {
 //     return <nav id="Nav">
