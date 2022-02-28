@@ -20,13 +20,13 @@ const Iterate = (props) => {
 
 
     const Restar = () => {
-        if (n > props.initialValue) {
+        if (n > props.minStock) {
             setN(n - 1)
         } else {
             setN(n)
             SwalAlert.fire({
                 icon: 'warning',
-                title: <p>No es posible agregar {props.initialValue} unidades al carrito.</p>
+                title: <p>No es posible agregar {props.minStock} unidades al carrito.</p>
             })
         }
     }
