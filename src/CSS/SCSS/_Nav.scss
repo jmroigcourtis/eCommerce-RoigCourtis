@@ -9,14 +9,34 @@
     font-size: 20px;
 }
 
-.NavP{
+p.NavP{
+        margin-right: 40px;
         font-weight: 700;
         color: rgb(245, 90, 90);
     }
 
-.NavP:hover {
-        transition: 1s;
-        color: 1px 1px 29px -8px rgb(255,32,99);
+
+p.NavBox {
+    display: block;
+    position: relative;
+    padding: 1 0;
     }
-
-
+    
+    /* Fade in */
+    p.NavBox::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: rgb(245, 90, 90);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    }
+    
+    p.NavBox:hover::after,
+    p.NavBox:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+    }

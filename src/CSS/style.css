@@ -1,9 +1,9 @@
 body {
-  background: #fce0e8;
+  background: #FFF9F9;
   height: 100%;
   margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed; }
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 .bannerList {
   background-color: #f799b5; }
@@ -25,13 +25,32 @@ h1 {
   padding: 0 20px;
   font-size: 20px; }
 
-.NavP {
+p.NavP {
+  margin-right: 40px;
   font-weight: 700;
   color: #f55a5a; }
 
-.NavP:hover {
-  transition: 1s;
-  color: 1px 1px 29px -8px #ff2063; }
+p.NavBox {
+  display: block;
+  position: relative;
+  padding: 1 0; }
+
+/* Fade in */
+p.NavBox::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #f55a5a;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms; }
+
+p.NavBox:hover::after,
+p.NavBox:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0); }
 
 svg {
   margin: 0 10px;
@@ -49,7 +68,7 @@ a {
   margin: 40px; }
 
 .footer {
-  background-color: #f36a93; }
+  background-color: #FFF9F9; }
 
 .bi-github {
-  color: white; }
+  color: #FF7878; }

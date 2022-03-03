@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 
 
 function Item({prods}) {
+
+
   return (
         <div className="d-flex justify-content-center">
             <Card className="cards" key={prods.id} style={{ width: '18rem' }}>
@@ -18,8 +20,8 @@ function Item({prods}) {
                             <Button variant="primary">Agregar al carrito</Button>
                         </Card.Body>
             </Card>
-    </div> 
-)
+        </div> 
+    )
 }
 
 export default Item

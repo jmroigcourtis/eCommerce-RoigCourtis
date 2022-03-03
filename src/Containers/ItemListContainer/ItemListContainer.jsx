@@ -14,12 +14,10 @@ const ItemListContainer = () => {
                 .catch((err) => console.log(err))
                 .finally(() => setLoading(false))
                 
-        }, [] /* Array vacio para respetar el Lifecycle de los componentes. El [] vacio permite que la función se ejecute solo una vez */)
-        console.log((productos))
-        
+        }, [] /* Array vacio para respetar el Lifecycle de los componentes. El [] vacio permite que la función se ejecute solo una vez */)        
         return ( 
         <>
-                {loading ? <h1 className="d-flex justify-content-center loading">Cargando</h1> : <ItemList className="wow bounce" productos = {productos}/>}
+                {loading ? <h1 className="d-flex justify-content-center loading">Cargando</h1> : <ItemList productos = {productos}/>}
         </>
         )
 }

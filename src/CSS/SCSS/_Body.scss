@@ -1,9 +1,9 @@
 body {
-    background: #fce0e8;
+    background: #FFF9F9;
     height: 100%;
     margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
 .bannerList {

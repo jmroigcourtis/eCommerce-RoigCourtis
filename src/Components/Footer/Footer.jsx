@@ -1,5 +1,5 @@
 const Footer = () => {
-    return  <footer className="d-flex footer justify-content-center p-1">
+    return  <footer className="d-flex footer justify-content-center p-1 shadow-sm">
                 <p>Desarrollado por Juan Manuel Roig Courtis</p>
                     <a href="https://github.com/jmroigcourtis" target="_blank" rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
