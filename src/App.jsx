@@ -9,7 +9,7 @@ function App() {
     <div>
       <header>
       <NavBar/>
-      <Title titulo={'Funkos'}/>
+      <Title titulo={'Últimas Novedades'}/>
       <ItemListContainer/>
       <Footer/>
       </header>

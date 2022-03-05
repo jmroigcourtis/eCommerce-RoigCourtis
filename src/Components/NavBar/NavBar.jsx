@@ -2,14 +2,14 @@ import ShowUnits from "../../Components/CartWidget/CartWidget";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
-import {Shop} from 'react-bootstrap-icons'
+import {Joystick} from 'react-bootstrap-icons'
 
 const NavBar = () => {
         return <>
             <Navbar sticky="top"  bg="light" className="shadow-sm d-flex">
                 <Container className="row">
                     <Navbar.Brand className="fs-4 ms-5">
-                        <Shop  style={{color: 'rgb(245, 90, 90)', height: '40px', width: '40px'}}/>
+                        <Joystick  style={{color: 'rgb(245, 90, 90)', height: '40px', width: '40px'}}/>
                         Geekland
                     </Navbar.Brand>
                         <Nav className="me-auto">
