@@ -5,17 +5,21 @@ import ItemDetail from "../../Components/ItemDetail/ItemDetail"
 const ItemDetailContainer = () => {
 
     const [detalles, setDetalles] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         setTimeout(()=>{
             getFetch
             .then((res) => {return res}) /*MUY IMPORTNTE PONER EL RETURN SINO SE ROMPE TODO */
             .then((res) => setDetalles(res))
             .catch((e) => console.error(e))
+            .finally(() => setLoading(false))
         }, 3000)
     }, [])
     return (
-    <ItemDetail detalles={detalles}/>    
-)
+        <div>
+            <ItemDetail detalles={detalles}/>
+        </div>
+    )
 }
 
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 function Item({prods}) {
-
 
   return (
         <div className="d-flex justify-content-center">

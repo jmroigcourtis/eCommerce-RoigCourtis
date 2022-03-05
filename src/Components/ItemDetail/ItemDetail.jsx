@@ -1,9 +1,7 @@
-
-
 const ItemDetail = ({detalles}) => {
     return (
         <div>   
-           {detalles.map(itemDetail => console.log(itemDetail.description))}
+            {detalles.map((itemDetail) => console.log(itemDetail.description))}
         </div>
     )
 
