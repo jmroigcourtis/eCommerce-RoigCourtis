@@ -16,6 +16,11 @@ h1 {
   color: white;
   font-weight: bold; }
 
+.Titulo {
+  margin-top: 20px;
+  margin-left: 260px;
+  width: 1400px; }
+
 #Nav {
   padding: 10px 200px; }
 
@@ -26,7 +31,6 @@ h1 {
   font-size: 20px; }
 
 p.NavP {
-  margin-right: 40px;
   font-weight: 700;
   color: #f55a5a; }
 

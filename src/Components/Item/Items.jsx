@@ -12,12 +12,10 @@ function Item({prods}) {
                 <Card.Img variant="top" src={prods.pictureURL} alt="Remera" />
                         <Card.Body>
                             <Card.Title>{prods.title}</Card.Title>
-                                <Card.Text>  
-                                    Color: {prods.description}<br></br>
-                                    Stock: {prods.stock}<br></br>
-                                    Price: ${prods.price}
-                                </Card.Text>
-                            <Button variant="primary">Agregar al carrito</Button>
+                            <Card.Text>
+                                Precio: ${prods.price}
+                            </Card.Text>
+                            <Button variant="primary">Detalles</Button>
                         </Card.Body>
             </Card>
         </div> 

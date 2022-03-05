@@ -1,13 +1,14 @@
-import RemeraNegra from '../Images/Remera_Negra.jpg'
-import RemeraRoja from '../Images/Remera_Roja.jpg'
-import RemeraTurquesa from '../Images/Remera_Turquesa.jpg'
-import RemeraRosa from '../Images/Remera_Rosa.jpg'
+import IronMan from '../Images/IronManEndGame.jpg'
+import HarryPotterOwl from '../Images/HarryPotterOwl.jpg'
+import LukeSkyWalkerGrogu from '../Images/LukeSkyWalkerGrogu.jpg'
+import DrStrangeWhatIf from '../Images/DrStrangeWhatIf.jpg'
 
 const productos = [
-        {id : 1, title : "Remera básica", description : 'Negra', price: '1200', pictureURL: RemeraNegra},
-        {id : 2, title : "Remera básica", description : 'Roja', price: '1200', pictureURL: RemeraRoja},
-        {id : 3, title : "Remera básica", description : 'Turquesa', price: '1200', pictureURL: RemeraTurquesa},
-        {id : 4, title : "Remera básica", description : 'Rosa', price: '1200', pictureURL: RemeraRosa },
+            {id : 1, title : "IronMan EndGame", description : 'Funko Pop representativo de la pelea entre IronMan y Thanos', price: '1200', pictureURL: IronMan},
+            {id : 2, title : "Harry Potter y Hedwig ", description : 'Funko Pop representativo de Harry Potter y Hedwig', price: '1200', pictureURL: HarryPotterOwl},
+            {id : 3, title : "Luke SkyWalker y Grogu", description : 'Funko Pop representativo de la serie "The Mandalorian" ', price: '1200', pictureURL: LukeSkyWalkerGrogu},
+            {id : 4, title : "Dr.Strange What If", description : 'Funko Pop representativo del Dr.Strange en la serie "What If"', price: '1200', pictureURL: DrStrangeWhatIf }
+
     ]
     
 export const getFetch = new Promise ((resolve, reject) => {
@@ -23,4 +24,5 @@ export const getFetch = new Promise ((resolve, reject) => {
             },2000)
         }
     })
+
 
