@@ -5,7 +5,6 @@ import ItemDetail from "../../Components/ItemDetail/ItemDetail"
 const ItemDetailContainer = () => {
 
     const [detalles, setDetalles] = useState([])
-    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         setTimeout(()=>{
             getFetch
