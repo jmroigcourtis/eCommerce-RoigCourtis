@@ -1,7 +1,9 @@
-const ItemDetail = ({detalles}) => {
+import ItemDetailStyle from './ItemDetail.css'
+
+const ItemDetail = ({detalle}) => {
     return (
-        <div>   
-            {detalles.map((itemDetail) => console.log(itemDetail.description))}
+        <div className="detalles shadow-sm fs-5">   
+            {detalle.description}
         </div>
     )
 

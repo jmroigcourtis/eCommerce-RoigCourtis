@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 function Item({prods}) {
@@ -14,7 +13,7 @@ function Item({prods}) {
                             <Card.Title>{prods.title}</Card.Title>
                             <Card.Text>
                                 Precio: ${prods.price}
-                            </Card.Text>
+                            </Card.Text>                            
                             <Button variant="primary">Detalles</Button>
                         </Card.Body>
             </Card>
