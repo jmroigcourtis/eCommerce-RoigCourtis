@@ -21,7 +21,6 @@ const ItemListContainer = () => {
                 {loading ? <h1 className="d-flex justify-content-center loading">Cargando...</h1> : 
                 <div>
                         <ItemList productos = {productos}/>
-                        <ItemDetailContainer/>
                 </div> }
         </>
         )

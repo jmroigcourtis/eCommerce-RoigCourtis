@@ -3,6 +3,7 @@ import ItemListContainer from './Containers/ItemListContainer/ItemListContainer'
 import Footer from './Components/Footer/Footer'
 import './CSS/style.css';
 import Title from './Components/SectionTitle/SectionTitle';
+import ItemDetailContainer from './Containers/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar/>
       <Title titulo={'Últimas Novedades'}/>
       <ItemListContainer/>
+      <ItemDetailContainer/>
       <Footer/>
       </header>
     </div>
