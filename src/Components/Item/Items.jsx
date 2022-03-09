@@ -1,7 +1,7 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import ItemDetailContainer from '../../Containers/ItemDetailContainer/ItemDetailContainer'
+import { NavLink } from 'react-router-dom'
 
 
 function Item({prods}) {
@@ -14,8 +14,10 @@ function Item({prods}) {
                             <Card.Title>{prods.title}</Card.Title>
                             <Card.Text>
                                 Precio: ${prods.price}
-                            </Card.Text>                 
-                            <Button variant="primary">Detalles</Button>
+                            </Card.Text>   
+                            <NavLink to={`/item/${prods.description}`}>
+                                <Button>Detalles</Button>
+                                </NavLink>
                         </Card.Body>
             </Card>
         </div> 

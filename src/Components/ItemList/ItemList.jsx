@@ -1,5 +1,5 @@
 import Item from "../../Components/Item/Items"
-import Iterate from "../../Components/Iterate/Iterate"
+// import Iterate from "../../Components/Iterate/Iterate"
 
 const ItemList = ( {productos}) => {
     return (
@@ -7,7 +7,7 @@ const ItemList = ( {productos}) => {
             <div className="d-flex justify-content-center">
                     {productos.map((prods) => <Item key={prods.id} prods={prods}/> )}
             </div> 
-            <Iterate maxStock={5} minStock={0}/>
+            {/* <Iterate maxStock={5} minStock={0}/> */}
         </div>
     )
 }

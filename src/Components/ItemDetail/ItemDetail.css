@@ -1,8 +1,14 @@
-.detalles {
-    padding: 20px;
-    margin: 20px;
-    width: 400px;
-    height: 100px;
-    border-radius: 50px;
-    background-color: bisque;
-}
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Item Itembuy"; 
+  }
+  .Item { grid-area: Item; }
+  .Itembuy { 
+      margin: 80px 0;
+      background-color: white;
+      grid-area: Itembuy; 
+    }

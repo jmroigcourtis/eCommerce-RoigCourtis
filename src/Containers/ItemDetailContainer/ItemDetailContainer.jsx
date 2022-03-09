@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { getFetch } from "../../Components/Helper/getFetch"
 import ItemDetail from "../../Components/ItemDetail/ItemDetail"
-import { productos } from "../../Components/Helper/getFetch"
 
 const ItemDetailContainer = () => {
 
     const [detalle, setDetalle] = useState([])
+    const {itemdescription} = useParams()
 
     useEffect(()=>{
-        setTimeout(()=>{
             getFetch
-            .then((res) => {return res}) /*MUY IMPORTNTE PONER EL RETURN SINO SE ROMPE TODO */
-            .then((res) => setDetalle(res[0]))
+            .then((res) => setDetalle(res.find((item) => item.description === itemdescription)))
             .catch((e) => console.error(e))
-        }, 3000)
-    }, [])
+    }, [itemdescription])
     return (
         <div>
             <ItemDetail detalle={detalle}/>
