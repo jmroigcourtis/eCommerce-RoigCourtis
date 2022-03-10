@@ -1,5 +1,6 @@
 body {
-  background: #FFF9F9;
+  background: #e9e4e4;
+  background: linear-gradient(34deg, #e9e4e4 5%, #f5f0e8 83%);
   height: 100%;
   margin: 0;
   overflow-y: auto;

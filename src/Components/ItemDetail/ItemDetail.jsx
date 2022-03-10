@@ -7,13 +7,15 @@ const ItemDetail = ({detalle}) => {
         <>
         <div class="container">
             <div class="Item">
-                        <h3 className='fs-2'>{detalle.title}</h3>
-                        <img src={detalle.pictureURL} alt={detalle.title} style={{width: "350px", height: "350px"}}>
-                        </img>
+                        <img className='shadow imgAlign' src={detalle.pictureURL} alt={detalle.title} style={{width: "425px", height: "425px"}}></img>
+                        <h6 className='text-center productDescription'>{detalle.description}</h6>
+
             </div>
-            <div class="Itembuy shadow-sm">
-                    <h2>{detalle.title}</h2>
-                    <h4>Precio: {detalle.price}</h4>
+            <div class="Itembuy shadow">
+                    <p className='productTitle'>{detalle.title}</p>
+                    <p className='productPrice'>${detalle.price}</p>
+                    <p className='productStock'>{detalle.stock}</p>
+                    <h6 className='productDescription'>{detalle.description}</h6>
                 <Iterate maxStock={5} minStock={0}/>
             </div>
         </div>

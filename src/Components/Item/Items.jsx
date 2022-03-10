@@ -8,13 +8,10 @@ function Item({prods}) {
 
   return (
         <div className="d-flex justify-content-center">
-            <Card className="cards" key={prods.id} style={{ width: '18rem' }}>
+            <Card className="cards shadow" key={prods.id} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={prods.pictureURL} alt="Remera" />
                         <Card.Body>
                             <Card.Title>{prods.title}</Card.Title>
-                            <Card.Text>
-                                Precio: ${prods.price}
-                            </Card.Text>   
                             <NavLink to={`/item/${prods.description}`}>
                                 <Button>Detalles</Button>
                                 </NavLink>
