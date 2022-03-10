@@ -7,7 +7,6 @@ const ItemList = ( {productos}) => {
             <div className="d-flex justify-content-center">
                     {productos.map((prods) => <Item key={prods.id} prods={prods}/> )}
             </div> 
-            {/* <Iterate maxStock={5} minStock={0}/> */}
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { Button, Card } from 'react-bootstrap'
 import Iterate from '../Iterate/Iterate'
 import ItemDetailStyle from './ItemDetail.css'
+import { TagsFill, Truck } from 'react-bootstrap-icons'
 
 const ItemDetail = ({detalle}) => {
     return (
@@ -12,10 +13,12 @@ const ItemDetail = ({detalle}) => {
 
             </div>
             <div class="Itembuy shadow">
+                <div class="ItembuyTitle shadow">
                     <p className='productTitle'>{detalle.title}</p>
-                    <p className='productPrice'>${detalle.price}</p>
-                    <p className='productStock'>{detalle.stock}</p>
-                    <h6 className='productDescription'>{detalle.description}</h6>
+                    </div>
+                    <p className='productPrice'>${detalle.price}<TagsFill style={{color: 'rgb(245, 90, 90)', width: '30px', height: '30px'}}/></p>
+                    <p className='productShip'><Truck style={{color: 'rgb(245, 90, 90)', width: '50px', height: '50px'}}/>Envios a todo el país!</p>
+                    <p className='productStock'>Stock {detalle.stock}</p>
                 <Iterate maxStock={5} minStock={0}/>
             </div>
         </div>

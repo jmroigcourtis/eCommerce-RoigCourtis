@@ -7,12 +7,12 @@ import { Navigate, NavLink } from "react-router-dom";
 
 const NavBar = () => {
         return <>
-            <Navbar sticky="top"  bg="light" className="shadow-sm d-flex">
+            <Navbar sticky="top"  className="shadow-sm NavBackground Nav d-flex">
                 <Container className="row">
                     <NavLink to='/inicio'>
-                        <Navbar.Brand className="fs-4 ms-5">
-                            <Joystick  style={{color: 'rgb(245, 90, 90)', height: '40px', width: '40px'}}/>
-                            Geekland
+                        <Navbar.Brand className="ms-5 fs-3" style={{color: 'white'}}>
+                            <Joystick  style={{height: '50px', width: '50px'}}/>Geekland
+                            
                         </Navbar.Brand>
                     </NavLink>
                         <Nav className="me-auto">

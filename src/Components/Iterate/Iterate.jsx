@@ -36,7 +36,7 @@ const Iterate = (props) => {
     return ( 
         <div className="d-flex justify-content-center">
             <Button className="btnCart btn bg-none" onClick={Sumar}>Agregar al carrito</Button>
-            <p>Items añadidos: {n}</p>
+            <p>{n}</p>
             <Button className="btnCart btn bg-none" onClick={Restar}>Sacar del carrito</Button>
         </div>
     )

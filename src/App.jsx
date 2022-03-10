@@ -13,11 +13,11 @@ function App() {
       <div>
         <header>
           <NavBar/>
-        <Routes>
-          <Route path='/' element={<ItemListContainer/>}/>
-          <Route path='/item/:itemdescription' element={<ItemDetailContainer/>}/>
-          <Route path='/*' element={<Navigate to='/' replace/>}/>
-        </Routes>
+          <Routes>
+            <Route path='/' element={<ItemListContainer/>}/>
+            <Route path='/item/:itemdescription' element={<ItemDetailContainer/>}/>
+            <Route path='/*' element={<Navigate to='/' replace/>}/>
+          </Routes>
           <Footer/>
         </header>
       </div>
