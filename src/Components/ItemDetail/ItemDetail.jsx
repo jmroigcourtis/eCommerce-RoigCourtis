@@ -10,7 +10,6 @@ const ItemDetail = ({detalle}) => {
             <div class="Item">
                         <img className='shadow imgAlign' src={detalle.pictureURL} alt={detalle.title} style={{width: "425px", height: "425px"}}></img>
                         <h6 className='text-center productDescription'>{detalle.description}</h6>
-
             </div>
             <div class="Itembuy shadow">
                 <div class="ItembuyTitle shadow">

@@ -6,13 +6,14 @@ import ItemDetail from "../../Components/ItemDetail/ItemDetail"
 const ItemDetailContainer = () => {
 
     const [detalle, setDetalle] = useState([])
-    const {itemdescription} = useParams()
+    const {id} = useParams()
 
     useEffect(()=>{
             getFetch
-            .then((res) => setDetalle(res.find((item) => item.description === itemdescription)))
+            .then((res) => setDetalle(res.find((item) => item.id === id)))
             .catch((e) => console.error(e))
-    }, [itemdescription])
+        }, [id])
+        console.log(detalle)
     return (
         <div>
             <ItemDetail detalle={detalle}/>
