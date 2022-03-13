@@ -1,0 +1,25 @@
+.CartWidget {
+    animation: toRight 1s forwards;
+}
+
+.CartWidget:hover {
+    animation: toStart 1s forwards ;
+}
+
+@keyframes toRight {
+    from {
+        transform: translateX(15px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes toStart {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(15px);
+    }
+}

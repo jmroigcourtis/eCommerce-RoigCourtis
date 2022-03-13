@@ -19,6 +19,7 @@ p.NavP{
         font-weight: 400;
         // color: rgb(245, 90, 90);
         color: white;
+        margin: 0 5px;
     }
 
 
@@ -46,4 +47,8 @@ p.NavBox {
     p.NavBox:focus::after {
     opacity: 1;
     transform: translate3d(0, 0.2em, 0);
+    }
+
+    p.NavP:focus {
+        background-color: white;
     }

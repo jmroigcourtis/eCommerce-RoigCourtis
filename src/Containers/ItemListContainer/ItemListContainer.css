@@ -1,0 +1,13 @@
+.animateLoading {
+    animation: Loading 1s forwards;
+}
+
+@keyframes Loading {
+    from {
+        opacity: 50%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}

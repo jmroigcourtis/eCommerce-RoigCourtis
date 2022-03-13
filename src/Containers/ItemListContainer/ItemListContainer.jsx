@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getFetch } from "../../Components/Helper/getFetch";
 import ItemList from '../../Components/ItemList/ItemList';
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import ItemListContainerStyle from "../ItemListContainer/ItemListContainer.css"
 
 
 const ItemListContainer = () => {        
@@ -16,7 +17,7 @@ const ItemListContainer = () => {
         }, [] /* Array vacio para respetar el Lifecycle de los componentes. El [] vacio permite que la función se ejecute solo una vez */)        
         return ( 
         <>
-                {loading ? <h1 className="d-flex justify-content-center loading">Cargando...</h1> : 
+                {loading ? <h1 className="d-flex justify-content-center loading animateLoading">Cargando...</h1> : 
                 <div>
                         <ItemList productos = {productos}/>
                 </div> }

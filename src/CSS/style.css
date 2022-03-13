@@ -37,7 +37,8 @@ h1 {
 
 p.NavP {
   font-weight: 400;
-  color: white; }
+  color: white;
+  margin: 0 5px; }
 
 p.NavBox {
   display: block;
@@ -60,6 +61,27 @@ p.NavBox:hover::after,
 p.NavBox:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0); }
+
+p.NavP:focus {
+  background-color: white; }
+
+.CartWidget {
+  animation: toRight 1s forwards; }
+
+.CartWidget:hover {
+  animation: toStart 1s forwards; }
+
+@keyframes toRight {
+  from {
+    transform: translateX(15px); }
+  to {
+    transform: translateX(0px); } }
+
+@keyframes toStart {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(15px); } }
 
 svg {
   margin: 0 10px;

@@ -1,5 +1,5 @@
 import { useState} from "react";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import ButtonStyle from '../Iterate/Iterate.css'
@@ -35,9 +35,9 @@ const Iterate = (props) => {
     
     return ( 
         <div className="d-flex justify-content-center">
-            <Button className="btnCart btn bg-none" onClick={Sumar}>Agregar al carrito</Button>
-            <p>{n}</p>
-            <Button className="btnCart btn bg-none" onClick={Restar}>Sacar del carrito</Button>
+            <button className="btnCart btn bg-none" onClick={Sumar}><p className="btnP">Agregar al carrito</p></button>
+            <p className="cartNumber text-center shadow">{n}</p>
+            <button className="btnCart btn bg-none" onClick={Restar}><p className="btnP">Sacar del carrito</p></button>
         </div>
     )
 }

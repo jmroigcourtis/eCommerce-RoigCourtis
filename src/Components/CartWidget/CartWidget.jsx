@@ -1,8 +1,8 @@
 import { Cart2 } from "react-bootstrap-icons";
 
 const CartWidget = () => {
-    return  <div>
-                <Cart2 style={{color: 'white', height: '40px', width: '40px'}}/>
+    return  <div className="CartWidget">
+                <Cart2 style={{color: 'white', height: '35px', width: '35px'}}/>
             </div>
             
 }

@@ -7,7 +7,7 @@ import { Navigate, NavLink } from "react-router-dom";
 
 const NavBar = () => {
         return <>
-            <Navbar sticky="top"  className="shadow-sm NavBackground Nav d-flex">
+            <Navbar sticky="top"  className="shadow NavBackground Nav d-flex">
                 <Container className="row">
                     <NavLink to='/inicio'>
                         <Navbar.Brand className="ms-5 fs-3" style={{color: 'white'}}>
@@ -17,10 +17,10 @@ const NavBar = () => {
                     </NavLink>
                         <Nav className="me-auto">
                             <NavLink to='/inicio'><p className=" fs-5 NavP NavBox">Inicio</p></NavLink>
-                            <Nav.Link href="#features"><p className="fs-5 NavP NavBox">Productos</p></Nav.Link>
-                            <Nav.Link href="#pricing"><p className="fs-5  NavP NavBox" >Sucursales</p></Nav.Link>
-                            <Nav.Link href="#pricing"><p className="fs-5  NavP NavBox" >Ingresá</p></Nav.Link>
-                            <NavLink to='/*' element={<Navigate to='/' replace/>}><ShowUnits/></NavLink>
+                            <NavLink to='/'><p className="fs-5 NavP NavBox">Productos</p></NavLink>
+                            <NavLink to='/'><p className="fs-5  NavP NavBox" >Sucursales</p></NavLink>
+                            <NavLink to='/'><p className="fs-5  NavP NavBox" >Ingresá</p></NavLink>
+                            <NavLink to='/checkOut'><ShowUnits/></NavLink>
                         </Nav>
                 </Container>
             </Navbar>
