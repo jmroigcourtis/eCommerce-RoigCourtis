@@ -5,40 +5,40 @@ import ButtonStyle from '../Iterate/Iterate.css'
 
 const SwalAlert = withReactContent(Swal)
 
-const Iterate = (props) => {
-    const [n, setN] = useState(0)
+const ItemCount = ({maxStock, minStock}) => {
+    const [count, setCount] = useState(0)
     const Sumar = () => {
-        if (n < props.maxStock) {
-            setN(n + 1)
-        } else if (n === props.maxStock) {
-            setN(n)
+        if (count < maxStock) {
+            setCount(count + 1)
+        } else if (count === maxStock) {
+            setCount(count)
                 SwalAlert.fire({
                     icon: 'warning',
-                    title: <p>Alcanzaste el máximo de unidades permitidas ({props.maxStock}) para agregar al carrito</p>
+                    title: <p>Alcanzaste el máximo de unidades permitidas ({maxStock}) para agregar al carrito</p>
                 })
         }
     } 
-
-
     const Restar = () => {
-        if (n > props.minStock) {
-            setN(n - 1)
+        if (count > minStock) {
+            setCount(count - 1)
         } else {
-            setN(n)
+            setCount(count)
             SwalAlert.fire({
                 icon: 'warning',
-                title: <p>No es posible agregar {props.minStock} unidades al carrito.</p>
+                title: <p>No es posible agregar {minStock} unidades al carrito.</p>
             })
         }
     }
+
+
     
     return ( 
         <div className="d-flex justify-content-center">
             <button className="btnCart btn bg-none" onClick={Sumar}><p className="btnP">Agregar al carrito</p></button>
-            <p className="cartNumber text-center shadow">{n}</p>
+            <p className="cartNumber text-center shadow">{count}</p>
             <button className="btnCart btn bg-none" onClick={Restar}><p className="btnP">Sacar del carrito</p></button>
         </div>
     )
 }
 
-export default Iterate
+export default ItemCount

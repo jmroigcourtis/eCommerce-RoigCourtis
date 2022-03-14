@@ -8,11 +8,11 @@ const ItemListContainer = () => {
         const [loading, setLoading] = useState(true)
 
         useEffect(()=> {
-                getFetch /* Simulación de llamada a una API */
-                .then ((resp) => setProductos(resp))/* Asignar valor a producto a partir de useState */
+                getFetch 
+                .then ((resp) => setProductos(resp))
                 .finally(() => setLoading(false))
                 
-        }, [] /* Array vacio para respetar el Lifecycle de los componentes. El [] vacio permite que la función se ejecute solo una vez */)        
+        }, [])        
         return ( 
         <>
                 {loading ? <h1 className="d-flex justify-content-center loading animateLoading">Cargando...</h1> : 

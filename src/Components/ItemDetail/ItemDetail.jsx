@@ -1,4 +1,4 @@
-import Iterate from '../Iterate/Iterate'
+import ItemCount from '../Iterate/ItemCount'
 import ItemDetailStyle from './ItemDetail.css'
 import { TagsFill, Truck, CartCheck } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
@@ -18,7 +18,7 @@ const ItemDetail = ({detalle}) => {
                     <p className='productShip'><Truck style={{color: 'rgb(245, 90, 90)', width: '50px', height: '50px'}}/>Envios a todo el país!</p>
                     <p className='productStock'>Stock {detalle.stock}</p>
                     <p className='productDescription'>Descripción: {detalle.description}</p>
-                <Iterate maxStock={5} minStock={0}/>
+                <ItemCount maxStock={5} minStock={0}/>
                     <div className='checkOut'>
                         <Link to='/checkOut'><button className='checkOutBtn btn shadow'><CartCheck style={{width: '35px', height: '35px'}}/></button></Link>
                     </div>
