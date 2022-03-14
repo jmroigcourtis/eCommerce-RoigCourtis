@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
             .then((res) => setDetalle(res.find((item) => item.id === id)))
             .catch((e) => console.error(e))
         }, [id])
-        console.log(detalle)
     return (
         <div>
             <ItemDetail detalle={detalle}/>
