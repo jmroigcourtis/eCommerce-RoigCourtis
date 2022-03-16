@@ -1,9 +1,24 @@
+import { useState } from 'react'
 import ItemCount from '../Iterate/ItemCount'
 import ItemDetailStyle from './ItemDetail.css'
 import { TagsFill, Truck, CartCheck } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
+// import {useCartContext} from '../../Context/CartContext'
 
 const ItemDetail = ({detalle}) => {
+    // const [count, setCount] = useState(null)
+    // const {addToCart} = useCartContext()
+
+    // const onAdd = cant => {
+    //     console.log(cant)
+    //     setCount(cant)
+    //     addToCart({...detalle, cantidad: cant})
+    // }
+    const [countItem, setCountItem] = useState()
+    const onAdd = (count) => {
+        console.log(count)
+    }
+
     return (
         <>
         <div class="container">
@@ -18,10 +33,7 @@ const ItemDetail = ({detalle}) => {
                     <p className='productShip'><Truck style={{color: 'rgb(245, 90, 90)', width: '50px', height: '50px'}}/>Envios a todo el país!</p>
                     <p className='productStock'>Stock {detalle.stock}</p>
                     <p className='productDescription'>Descripción: {detalle.description}</p>
-                <ItemCount maxStock={5} minStock={0}/>
-                    <div className='checkOut'>
-                        <Link to='/checkOut'><button className='checkOutBtn btn shadow'><CartCheck style={{width: '35px', height: '35px'}}/></button></Link>
-                    </div>
+                <ItemCount maxStock={5} minStock={0} onAdd={onAdd}/>
             </div>
         </div>
         </>

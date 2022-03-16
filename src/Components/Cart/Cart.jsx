@@ -1,6 +1,15 @@
+// import { useCartContext } from "../../Context/CartContext"
 
 const CheckOut = () => {
-    return <h2>Futuro carrito de compras</h2>
+
+    // const {cartList} = useCartContext()
+    // console.log(cartList)
+
+    return (
+    <div>
+        cart
+        {/* {cartList.map((item) => <li>{item.name}</li> )} */}
+    </div>)
 }
 
 export default CheckOut
