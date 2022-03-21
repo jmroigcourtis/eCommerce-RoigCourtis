@@ -1,17 +1,13 @@
 import {createContext, useContext, useState} from 'react'
 
-const CartContext = createContext([])
+export const CartContext = createContext([])
 
-export const useCartContext = () => {
-        useContext(CartContext)
-}
-
-export const CartContextProvider  = ({children}) => {
-    const [cartList, setCartList] = useState([]) /*Estado global por Context */
+export const CartContextProvider = ({children}) => { //Children para capturar toda la información de los nodos hijos
+    const[cartList, setCartList] = useState([])
 
     const addToCart = (item) => {
-        setCartList([...cartList, item])
-    }
+        setCartList([...cartList, item]) //Utilizando spread operator
+    }   
 
     const removeFromCart = () => {
         setCartList([])
@@ -27,5 +23,6 @@ export const CartContextProvider  = ({children}) => {
         </CartContext.Provider>
     )
 }
+
 
 /*El prop CHILDREN adquiere las propiedades de todos los nodos hijos */

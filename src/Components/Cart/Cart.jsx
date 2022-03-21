@@ -1,14 +1,25 @@
-// import { useCartContext } from "../../Context/CartContext"
+import {useContext} from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 const CheckOut = () => {
-
-    // const {cartList} = useCartContext()
-    // console.log(cartList)
-
+    const {cartList, removeFromCart} = useContext(CartContext)
+    console.log(cartList)
     return (
     <div>
-        cart
-        {/* {cartList.map((item) => <li>{item.name}</li> )} */}
+        {cartList.map((item) => {
+            return (
+                <>
+                    <ul key={item.id}>
+                        <li>{item.title}</li>
+                        <li>{item.description}</li>
+                        <li>{item.price}</li>
+                    </ul>
+                    <div className='d-flex justify-content-center'>
+                        <button className='btn' onClick={removeFromCart}>Eliminar carrito</button>
+                    </div>
+                </>
+            )
+        })}
     </div>)
 }
 

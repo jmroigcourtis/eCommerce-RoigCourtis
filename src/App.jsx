@@ -5,11 +5,11 @@ import './CSS/style.css';
 import ItemDetailContainer from './Containers/ItemDetailContainer/ItemDetailContainer';
 import CheckOut from './Components/Cart/Cart';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom' /*Este componente envuelve a la app que quiero que tenga navegabilidad */
-import { CartContextProvider } from './Context/CartContext';
+import {CartContextProvider} from './Context/CartContext' //Componente que retorna al método provider.
+
 function App() {
   return (
-  <CartContextProvider value={{}}>
-
+  <CartContextProvider> 
     <BrowserRouter>
       <div>
         <header>
