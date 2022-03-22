@@ -1,0 +1,27 @@
+.CartProduct {
+    margin: 10px 0;
+    background-color: rgb(235, 235, 235);
+}
+
+.ProductTitle {
+    background-color: rgb(245, 90, 90);
+    width: 30%;
+    height: 40px;
+}
+
+.ProductTitle h2 {
+    color: white;
+}
+
+.imgResize {
+    width: 250px;
+    height: 250px;
+    margin: 15px 150px;
+    border-radius: 20px;
+}
+
+.clearCartButton {
+    background-color: rgb(245, 90, 90);
+    color: white;
+    font-weight: 700;  
+}

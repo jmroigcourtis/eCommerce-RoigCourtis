@@ -11,13 +11,10 @@ const ItemDetail = ({producto}) => {
 
     const {addToCart, cartList} = useContext(CartContext)
     const onAdd = (count) => {
-        console.log(count)
-        console.table(producto);
         setCountItem(count)
-        addToCart({...producto, cantidad: count})
+        addToCart({...producto,  cantidad: count})
+        console.log(cartList);
     }
-    console.log(cartList);
-
     return (
         <>
         <div class="container">

@@ -95,6 +95,29 @@ ul {
 a {
   text-decoration: none; }
 
+.CartProduct {
+  margin: 10px 0;
+  background-color: #ebebeb; }
+
+.ProductTitle {
+  background-color: #f55a5a;
+  width: 30%;
+  height: 40px; }
+
+.ProductTitle h2 {
+  color: white; }
+
+.imgResize {
+  width: 250px;
+  height: 250px;
+  margin: 15px 150px;
+  border-radius: 20px; }
+
+.clearCartButton {
+  background-color: #f55a5a;
+  color: white;
+  font-weight: 700; }
+
 .cards {
   margin: 40px;
   border-color: #fdc0c0; }
