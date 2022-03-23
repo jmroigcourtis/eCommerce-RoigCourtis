@@ -3,17 +3,17 @@ import ItemCount from '../Iterate/ItemCount'
 import ItemDetailStyle from './ItemDetail.css'
 import { TagsFill, Truck, CartCheck } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { useContext} from 'react'
 import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({producto}) => {
     const [countItem, setCountItem] = useState()
 
-    const {addToCart, cartList} = useContext(CartContext)
+    
+    const {addToCart} = useContext(CartContext)
     const onAdd = (count) => {
         setCountItem(count)
         addToCart({...producto,  cantidad: count})
-        console.log(cartList);
     }
     return (
         <>
