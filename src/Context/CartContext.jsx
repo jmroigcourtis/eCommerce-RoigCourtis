@@ -21,8 +21,8 @@ export const CartContextProvider = ({children}) => { //Children para capturar to
         }
 
         const addQuantity = (id) => {
-            const itemQuantity = cartList.map(item => item.id === id ? {...item, cantidad: item.cantidad} : item);
-            setCartList(itemQuantity)
+            const itemQuantity = cartList.map(item => item.id === id ? {...item, cantidad: item.cantidad + 1} : item);
+            return setCartList(itemQuantity)
         }
 
         const newItem = Object.assign(item, {cantidad: item.cantidad})

@@ -19,6 +19,9 @@ const CheckOut = () => {
                         <div className='ProductImage'>
                             <img className='imgResize' src={item.pictureURL}></img>
                         </div>
+                        <div className='ProductQuantity'>
+                            <p>Cantidad: {item.cantidad}</p>
+                        </div>
                     </div>
                 </div>
             </>
