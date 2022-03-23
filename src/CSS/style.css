@@ -115,8 +115,57 @@ a {
 
 .clearCartButton {
   background-color: #f55a5a;
+  margin: 20px;
+  height: 50px;
+  width: 150px;
+  animation: ClearCartEndAnimation 1s; }
+
+.clearCartButton p {
+  font-weight: 600;
+  font-size: 20px;
+  color: white; }
+
+.clearCartButton:hover {
+  animation: ClearCartStartAnimation 1s forwards; }
+
+.EmptyCartAdvice {
+  display: inline-block;
+  justify-content: center; }
+
+.EmptyCartButtonText {
+  font-size: 20px;
+  font-weight: 600;
   color: white;
-  font-weight: 700; }
+  margin: -2px; }
+
+.GoToShopButton {
+  background-color: #f55a5a;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+  animation: ClearCartEndAnimation 1s; }
+
+.GoToShopButton:hover {
+  animation: ClearCartStartAnimation 1s forwards; }
+
+.GoToShop {
+  color: #f55a5a; }
+
+@keyframes ClearCartStartAnimation {
+  0% {
+    color: white;
+    background-color: #f55a5a; }
+  100% {
+    color: white;
+    background-color: #f53131; } }
+
+@keyframes ClearCartEndAnimation {
+  0% {
+    color: white;
+    background-color: #f53131; }
+  100% {
+    color: white;
+    background-color: #f55a5a; } }
 
 .cards {
   margin: 40px;

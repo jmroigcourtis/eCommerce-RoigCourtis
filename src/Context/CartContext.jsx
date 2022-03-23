@@ -10,9 +10,7 @@ export const CartContextProvider = ({children}) => { //Children para capturar to
     const SwalAlert = withReactContent(Swal)
     const[cartList, setCartList] = useState([])
 
-    useEffect(()=> {
-        console.log(cartList)
-    }, [cartList])
+    useEffect(()=> {console.log(cartList)}, [cartList])
     
     
     const addToCart = (item) => {
@@ -27,6 +25,8 @@ export const CartContextProvider = ({children}) => { //Children para capturar to
 
         const newItem = Object.assign(item, {cantidad: item.cantidad})
         checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+
+
     };   
     
     

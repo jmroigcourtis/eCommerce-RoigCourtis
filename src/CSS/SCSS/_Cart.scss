@@ -22,6 +22,78 @@
 
 .clearCartButton {
     background-color: rgb(245, 90, 90);
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    animation: ClearCartEndAnimation 1s ;
+}
+
+.clearCartButton p {
+    font-weight: 600;
+    font-size: 20px;
     color: white;
-    font-weight: 700;  
+
+}
+
+
+.clearCartButton:hover {
+    animation: ClearCartStartAnimation 1s forwards;
+}
+
+.EmptyCartAdvice {
+    display: inline-block;
+    justify-content: center;
+}
+
+.EmptyCartButtonText {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: -2px;
+}
+
+.GoToShopButton {
+    background-color: rgb(245, 90, 90);
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    animation: ClearCartEndAnimation 1s ;
+}
+
+.GoToShopButton:hover {
+    animation: ClearCartStartAnimation 1s forwards;
+}
+
+
+
+.GoToShop {
+    color: rgb(245, 90, 90);
+}
+
+@keyframes ClearCartStartAnimation {
+    0% {
+        color: white;
+        background-color: rgb(245, 90, 90);
+    }
+    
+    100% {
+        color: white;
+        background-color: rgb(245, 49, 49);
+
+    }
+}
+
+@keyframes ClearCartEndAnimation {
+    0% {
+        color: white;
+        background-color: rgb(245, 49, 49);
+
+    }
+    
+    100% {
+        color: white;
+        background-color: rgb(245, 90, 90);
+
+     }
+ 
 }
