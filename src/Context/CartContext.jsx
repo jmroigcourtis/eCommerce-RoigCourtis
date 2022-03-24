@@ -32,9 +32,8 @@ export const CartContextProvider = ({children}) => {
                 };       
                 
                 const removeItem = (id) => {
-                    const remove = cartList.filter(item => item.id !== id)     
-                    if(remove){cartList.splice(remove, 1)}
-                    console.log(remove);
+                    const filterCart = cartList.filter(item => item.id !== id)     
+                    setCartList(filterCart)
                 }
 
                 const checkQuantity = () => {
