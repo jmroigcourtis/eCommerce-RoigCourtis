@@ -66,22 +66,13 @@ p.NavP:focus {
   background-color: white; }
 
 .CartWidget {
-  animation: toRight 1s forwards; }
+  animation: showCart 1s; }
 
-.CartWidget:hover {
-  animation: toStart 1s forwards; }
-
-@keyframes toRight {
+@keyframes showCart {
   from {
-    transform: translateX(15px); }
+    opacity: 0%; }
   to {
-    transform: translateX(0px); } }
-
-@keyframes toStart {
-  from {
-    transform: translateX(0); }
-  to {
-    transform: translateX(15px); } }
+    opacity: 100%; } }
 
 svg {
   margin: 0 10px;
@@ -96,16 +87,21 @@ a {
   text-decoration: none; }
 
 .CartProduct {
-  margin: 10px 0;
-  background-color: #ebebeb; }
+  margin: 10px 0; }
 
 .ProductTitle {
   background-color: #f55a5a;
-  width: 30%;
+  width: 60%;
   height: 40px; }
 
 .ProductTitle h2 {
   color: white; }
+
+.ProductPrice {
+  color: #f55a5a;
+  font-size: 55px;
+  font-weight: 600;
+  margin-top: 100px; }
 
 .imgResize {
   width: 250px;

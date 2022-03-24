@@ -4,8 +4,11 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import {Joystick} from 'react-bootstrap-icons'
 import { Navigate, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 const NavBar = () => {
+    const {cartList} = useContext(CartContext)
         return <>
             <Navbar sticky="top"  className="shadow NavBackground Nav d-flex">
                 <Container className="row">
@@ -20,7 +23,9 @@ const NavBar = () => {
                             <NavLink to='/'><p className="fs-5 NavP NavBox">Productos</p></NavLink>
                             <NavLink to='/'><p className="fs-5  NavP NavBox" >Sucursales</p></NavLink>
                             <NavLink to='/'><p className="fs-5  NavP NavBox" >Ingresá</p></NavLink>
-                            <NavLink to='/checkOut'><ShowUnits/></NavLink>
+                            <NavLink to='/checkOut'>
+                                {cartList.length <= 0 ? null : <ShowUnits/>}
+                                </NavLink>
                         </Nav>
                 </Container>
             </Navbar>

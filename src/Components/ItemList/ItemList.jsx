@@ -16,7 +16,7 @@ import {memo} from 'react'
 const ItemList = ( {productos} ) => {
     return (
         <div>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex flex-wrap justify-content-center">
                     {productos.map((prod) => <Item key={prod.id} prod={prod}/> )}
             </div> 
         </div>

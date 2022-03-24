@@ -14,7 +14,6 @@ const ItemDetail = ({producto}) => {
     const onAdd = (count) => {
         setCountItem(count)
         addToCart({...producto,  cantidad: count})
-        console.log(count)
     }
     return (
         <>

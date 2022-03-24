@@ -1,25 +1,14 @@
 .CartWidget {
-    animation: toRight 1s forwards;
+    animation: showCart 1s ;
 }
 
-.CartWidget:hover {
-    animation: toStart 1s forwards ;
-}
 
-@keyframes toRight {
+@keyframes showCart {
     from {
-        transform: translateX(15px);
+        opacity: 0%;
     }
     to {
-        transform: translateX(0px);
+        opacity: 100%;
     }
 }
 
-@keyframes toStart {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(15px);
-    }
-}

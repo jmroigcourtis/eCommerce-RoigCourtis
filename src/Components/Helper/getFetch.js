@@ -17,8 +17,15 @@ export const productos = [
             {id : '1', title : "Iron Man", description : 'Funko Pop representativo de la pelea entre IronMan y Thanos', price: '1200', stock: 'Disponible (5)', pictureURL: IronMan},
             {id : '2', title : "Harry Potter", description : 'Funko Pop representativo de Harry Potter y Hedwig', price: '2500', stock: 'Disponible (5)', pictureURL: HarryPotterOwl},
             {id : '3', title : "Luke Skywalker", description : 'Funko Pop representativo de la serie "The Mandalorian" ', price: '2000', stock:'Disponible (5)', pictureURL: LukeSkyWalkerGrogu},
-            {id : '4', title : "Dr.Strange", description : 'Funko Pop representativo del Dr.Strange en la serie "What If" ', price: '6000', stock: 'Disponible (5)', pictureURL: DrStrangeWhatIf }
-    ]
+            {id : '4', title : "Dr.Strange", description : 'Funko Pop representativo del Dr.Strange en la serie "What If" ', price: '6000', stock: 'Disponible (5)', pictureURL: DrStrangeWhatIf },
+            {id : '5', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox1},
+            {id : '6', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox2},
+            {id : '7', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox3},
+            {id : '8', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox4},
+            {id : '9', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox5},
+            {id : '10', title : 'Joystick XBOX', description: 'Joystick de XBOX', price: '19000', stock: 'Disponible (5)', pictureURL: joystickXbox6},
+    
+        ]
     
 export const getFetch = new Promise ((resolve, reject) => {
         

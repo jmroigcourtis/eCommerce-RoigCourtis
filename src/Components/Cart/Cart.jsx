@@ -4,8 +4,7 @@ import { Cart2 } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 
 const CheckOut = () => {
-    const {cartList, clearCart} = useContext(CartContext)
-    
+    const {cartList, clearCart, removeItem, checkPrice} = useContext(CartContext)
 
     return cartList.length === 0 ? 
     <div>
@@ -25,7 +24,7 @@ const CheckOut = () => {
         {cartList.map((item) => {
         return (
             <>
-                <div className='CartDetail'>
+                <div className='CartDetail d-flex'>
                     <div className='CartProduct'>
                         <div className='ProductTitle'>
                             <h2>{item.title}</h2>
@@ -33,15 +32,21 @@ const CheckOut = () => {
                         <div className='ProductImage'>
                             <img className='imgResize' src={item.pictureURL}></img>
                         </div>
+                            <div className='ProductQuantity'>
+                                <p>Cantidad: {item.cantidad}</p>
+                            </div>
                     </div>
-                        <div className='ProductQuantity'>
-                            <p>Cantidad: {item.cantidad}</p>
-                        </div>
+
+                            <div className='PriceDetail'>
+                                <p className='ProductPrice'>$ {item.price}</p>
+                            </div>
                 </div>
+                        <button onClick={removeItem}>Eliminar del carrito</button>
             </>
         )
         })}
                 <div className='d-flex justify-content-center'>
+                        <p>Total: {checkPrice}</p>
                     <button className='clearCartButton btn' onClick={clearCart}>
                         <p>Vaciar carrito</p>
                     </button>
