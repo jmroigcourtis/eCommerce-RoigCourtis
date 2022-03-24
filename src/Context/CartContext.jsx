@@ -19,35 +19,35 @@ export const CartContextProvider = ({children}) => {
                     return cartList.find((item) => item.id === id)
                     }
                     
-
-                const addQuantity = (id) => {
-                    const itemQuantity = cartList.map(item => item.id === id ? {...item, cantidad: item.cantidad} : item);
-                    return setCartList(itemQuantity)
+                    const addQuantity = (id) => {
+                        const itemQuantity = cartList.map(item => item.id === id ? {...item, cantidad: item.cantidad} : item);
+                        return setCartList(itemQuantity)
+                    }
+                
+                    const newItem = Object.assign(item, {cantidad: item.cantidad})
+                    checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+    
+                    
+                    
+                };       
+                
+                const removeItem = (id) => {
+                    const remove = cartList.filter(item => item.id !== id)     
+                    if(remove){cartList.splice(remove, 1)}
+                    console.log(remove);
                 }
-                            
-                const newItem = Object.assign(item, {cantidad: item.cantidad})
-                checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
 
-        
-    };   
+                const checkQuantity = () => {
+                    let totalQuantity = 0
+                    cartList.forEach(item => totalQuantity += item.cantidad)
+                    console.log(totalQuantity)
+                }
 
-    const removeItem = (id) => {
-        const remove = cartList.filter(item => item.id !== id)     
-        if(remove){cartList.splice(remove, 1)}
-    }
-
-
-    const checkQuantity = () => {
-        let totalQuantity = 0
-        cartList.forEach(item => totalQuantity += item.cantidad)
-        console.log(totalQuantity)
-    }
-
-    const checkPrice = () => {
-        let totalPrice = 0
-        cartList.forEach(item => totalPrice += item.cantidad * item.price)
-        console.log(totalPrice)
-    }
+                const checkPrice = () => {
+                    let totalPrice = 0
+                    cartList.forEach(item => totalPrice += item.cantidad * item.price)
+                    console.log(totalPrice)
+                }
 
     checkPrice();
 

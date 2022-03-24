@@ -41,7 +41,7 @@ const CheckOut = () => {
                                 <p className='ProductPrice'>$ {item.price}</p>
                             </div>
                 </div>
-                        <button onClick={removeItem}>Eliminar del carrito</button>
+                        <button onClick={ () => removeItem( item.id ) }>Eliminar del carrito</button>
             </>
         )
         })}
