@@ -1,8 +1,8 @@
 
 .Nav {
     width: auto;
-    height: 70px;
-    margin: 20px 0;
+    height: 80px;
+    padding-top: 5px;
 }
 
 .NavBackground {
@@ -52,3 +52,17 @@ p.NavBox {
     p.NavP:focus {
         background-color: white;
     }
+
+    .me-auto {
+        margin-top: 35px;
+    }
+    .itemsInCart {
+        color: rgb(245, 90, 90);
+        margin-left: 45px;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 30px;
+        background-color: white;
+        width: 25px;
+    }
+

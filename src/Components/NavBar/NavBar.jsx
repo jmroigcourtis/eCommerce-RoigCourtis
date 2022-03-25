@@ -24,7 +24,15 @@ const NavBar = () => {
                             <NavLink to='/'><p className="fs-5  NavP NavBox" >Sucursales</p></NavLink>
                             <NavLink to='/'><p className="fs-5  NavP NavBox" >Ingresá</p></NavLink>
                             <NavLink to='/checkOut'>
-                                {cartList.length <= 0 ? null : <ShowUnits/>}
+                                {cartList.length <= 0 ? null 
+                                    : 
+                                    <>
+                                        <ShowUnits/>
+                                        <div>
+                                            <p className="itemsInCart text-center">{cartList.length}</p>
+                                        </div>
+                                    </>
+                                    }
                                 </NavLink>
                         </Nav>
                 </Container>

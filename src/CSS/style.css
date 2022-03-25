@@ -23,8 +23,8 @@ h1 {
 
 .Nav {
   width: auto;
-  height: 70px;
-  margin: 20px 0; }
+  height: 80px;
+  padding-top: 5px; }
 
 .NavBackground {
   background-color: #f55a5a; }
@@ -64,6 +64,18 @@ p.NavBox:focus::after {
 
 p.NavP:focus {
   background-color: white; }
+
+.me-auto {
+  margin-top: 35px; }
+
+.itemsInCart {
+  color: #f55a5a;
+  margin-left: 45px;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 30px;
+  background-color: white;
+  width: 25px; }
 
 .CartWidget {
   animation: showCart 1s; }
