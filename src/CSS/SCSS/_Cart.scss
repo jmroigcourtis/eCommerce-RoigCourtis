@@ -4,20 +4,30 @@
 
 .ProductTitle {
     background-color: rgb(245, 90, 90);
-    width: 60%;
-    height: 40px;
+    width: 250px;
+    margin-top: 40px;
 }
 
 .ProductTitle h2 {
     color: white;
-}
+    }
 
 .ProductPrice {
     color: rgb(245, 90, 90);
     font-size: 55px;
     font-weight: 600;
-    margin-top: 100px;
+    margin-top: 20px;
 }
+
+.ProductQuantity {
+    background-color: white;
+    border-color: black;
+    color: rgb(245, 90, 90);
+    width: 150px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
 
 .imgResize {
     width: 250px;
@@ -70,9 +80,14 @@
     animation: ClearCartStartAnimation 1s forwards;
 }
 
-
-
 .GoToShop {
+    color: rgb(245, 90, 90);
+}
+
+.CartX {
+    margin: 0 250px;
+    width: 50px;
+    height: 50px;
     color: rgb(245, 90, 90);
 }
 

@@ -19,17 +19,16 @@ export const CartContextProvider = ({children}) => {
                     return cartList.find((item) => item.id === id)
                     }
                     
-                    const addQuantity = (id) => {
-                        const itemQuantity = cartList.map(item => item.id === id ? {...item, cantidad: item.cantidad} : item);
+                    const addQuantity = () => {
+                        const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad += 1} : item);
                         return setCartList(itemQuantity)
                     }
-                
+
+                    
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
                     checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
-    
                     
-                    
-                };       
+                };           
                 
                 const removeItem = (id) => {
                     const filterCart = cartList.filter(item => item.id !== id)     
@@ -37,22 +36,19 @@ export const CartContextProvider = ({children}) => {
                 }
 
                 const checkQuantity = () => {
-                    let totalQuantity = 0
-                    cartList.forEach(item => totalQuantity += item.cantidad)
+                    let totalQuantity = 0;
+                    cartList.map(item => item.cantidad > 0 ? totalQuantity += item.cantidad : null)
                     console.log(totalQuantity)
                 }
 
-                const checkPrice = () => {
+                const totalPrice = () => {
                     let totalPrice = 0
                     cartList.forEach(item => totalPrice += item.cantidad * item.price)
-                    console.log(totalPrice)
+                    console.log(`Precio total: $ ${totalPrice}`);
                 }
 
-    checkPrice();
-
-
-    checkQuantity()
-
+    checkQuantity();
+    totalPrice();
 
     const clearCart = () => {
         setCartList([])
@@ -67,8 +63,7 @@ export const CartContextProvider = ({children}) => {
             cartList,
             addToCart,
             clearCart,
-            removeItem        
-            }}>
+            removeItem                    }}>
             {children} 
         </CartContext.Provider>
     )

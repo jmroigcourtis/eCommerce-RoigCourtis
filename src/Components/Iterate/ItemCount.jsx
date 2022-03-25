@@ -33,12 +33,11 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
                 })
         }
     } 
-    const Restar = (e) => {
+    const Restar = () => {
         if (count > minStock) {
             setCount(count - 1)
         } else {
             setCount(count)
-            e.preventDefault()
             SwalAlert.fire({
                 icon: 'warning',
                 title: <p>No es posible agregar {minStock} unidades al carrito.</p>
