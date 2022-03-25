@@ -115,13 +115,30 @@ a {
   font-weight: 600;
   margin-top: 20px; }
 
+.ProductsTotalPrice {
+  color: #f55a5a;
+  font-size: 55px;
+  font-weight: 600; }
+
 .ProductQuantity {
   background-color: white;
   border-color: black;
+  border-radius: 20px;
   color: #f55a5a;
   width: 150px;
-  font-size: 25px;
-  font-weight: 600; }
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 40px; }
+
+.cartQuantity {
+  background-color: white;
+  border-color: black;
+  border-radius: 20px;
+  color: #f55a5a;
+  width: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 40px; }
 
 .imgResize {
   width: 250px;

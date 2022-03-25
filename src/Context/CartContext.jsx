@@ -36,15 +36,12 @@ export const CartContextProvider = ({children}) => {
                 }
 
                 const checkQuantity = () => {
-                    let totalQuantity = 0;
-                    cartList.map(item => item.cantidad > 0 ? totalQuantity += item.cantidad : null)
-                    console.log(totalQuantity)
+                    return cartList.reduce((acc, value) => acc + (value.cantidad), 0)
+                    
                 }
 
                 const totalPrice = () => {
-                    let totalPrice = 0
-                    cartList.forEach(item => totalPrice += item.cantidad * item.price)
-                    console.log(`Precio total: $ ${totalPrice}`);
+                    return cartList.reduce( (acc, value) => acc + (value.cantidad * value.price), 0 ) 
                 }
 
     checkQuantity();
@@ -63,7 +60,9 @@ export const CartContextProvider = ({children}) => {
             cartList,
             addToCart,
             clearCart,
-            removeItem                    }}>
+            removeItem,
+            totalPrice,
+            checkQuantity                    }}>
             {children} 
         </CartContext.Provider>
     )

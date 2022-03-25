@@ -19,13 +19,35 @@
     margin-top: 20px;
 }
 
+.ProductsTotalPrice {
+    color: rgb(245, 90, 90);
+    font-size: 55px;
+    font-weight: 600;
+
+}
+
 .ProductQuantity {
     background-color: white;
     border-color: black;
+    border-radius: 20px;
     color: rgb(245, 90, 90);
     width: 150px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
+    margin-left: 40px;
+
+}
+
+
+.cartQuantity {
+    background-color: white;
+    border-color: black;
+    border-radius: 20px;
+    color: rgb(245, 90, 90);
+    width: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 40px;
 }
 
 

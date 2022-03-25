@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { CartXFill} from 'react-bootstrap-icons'
 
 const CheckOut = () => {
-    const {cartList, clearCart, removeItem} = useContext(CartContext)
+    const {cartList, clearCart, removeItem, totalPrice, checkQuantity} = useContext(CartContext)
     return cartList.length === 0 ? 
     <div>
         <div className='d-flex justify-content-center'>
@@ -46,6 +46,9 @@ const CheckOut = () => {
             </>
         )
         })}
+                    <div className='d-flex justify-content-center'>
+                        <p className='ProductsTotalPrice'>Total: ${totalPrice()}</p><br></br>
+                    </div>
                 <div className='d-flex justify-content-center'>
                     <button className='clearCartButton btn' onClick={clearCart}>
                         <p>Vaciar carrito</p>

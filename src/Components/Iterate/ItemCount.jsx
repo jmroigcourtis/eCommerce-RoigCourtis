@@ -1,4 +1,5 @@
-import { useState} from "react";
+import { useState, useContext} from "react";
+import { CartContext } from "../../Context/CartContext.jsx";
 import { Link } from "react-router-dom";
 import { CartCheck } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
@@ -9,7 +10,7 @@ const SwalAlert = withReactContent(Swal)
 
 const ItemCount = ({maxStock, minStock, onAdd}) => {
     const [count, setCount] = useState(0)
-
+    const {cartList} = useContext(CartContext)
     const addToCart = (e) => {
         onAdd(count)
         if (count <= 0) {
@@ -21,7 +22,7 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
             })
         } 
     }
-
+    
     const Sumar = () => {
         if (count < maxStock) {
             setCount(count + 1)
