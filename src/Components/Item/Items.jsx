@@ -6,7 +6,7 @@ import Itemcss from '../Item/Items.css'
 
 
 function Item({prod}) {
-
+    console.log(prod);
   return (
         <div className="d-flex justify-content-center">
             <Card className="cards shadow" key={prod.id} style={{ width: '18rem' }}>

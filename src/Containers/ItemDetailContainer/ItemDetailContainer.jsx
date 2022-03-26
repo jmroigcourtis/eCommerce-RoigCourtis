@@ -1,18 +1,28 @@
-import { useState, useEffect } from "react"
+import { doc, getDoc, getFirestore, query, where } from "firebase/firestore"
+import {useEffect} from "react"
 import { useParams } from "react-router-dom"
-import { getFetch } from "../../Components/Helper/getFetch"
 import ItemDetail from "../../Components/ItemDetail/ItemDetail"
+import { useContext } from "react"
+import { CartContext } from "../../Context/CartContext"
+
 
 const ItemDetailContainer = () => {
-
-    const [producto, setProducto] = useState([])
+    const {producto, setProducto} = useContext(CartContext)
     const {id} = useParams()
+    console.log(id);
 
-    useEffect(()=>{
-            getFetch
-            .then((res) => setProducto(res.find((item) => item.id === id)))
-            .catch((e) => console.error(e))
-        }, [id])
+    useEffect(()=> {
+        const getData = ( ) => {
+            const db = getFirestore()
+            const queryDb = doc(db, 'productos', id)
+            getDoc(queryDb)
+            .then(res => setProducto(res.data()))
+            .catch(e => console.log(e))
+        }
+        getData()
+    }, [id])
+
+    console.log(producto);
     return (
         <div>
             <ItemDetail producto={producto}/>

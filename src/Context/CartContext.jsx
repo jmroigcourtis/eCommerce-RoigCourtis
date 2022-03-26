@@ -10,6 +10,7 @@ export const CartContext = createContext([])
 export const CartContextProvider = ({children}) => { 
     const SwalAlert = withReactContent(Swal)
     const[cartList, setCartList] = useState([])
+    const [producto, setProducto] = useState([])
 
     useEffect(()=> {console.log(cartList)}, [cartList])
 
@@ -26,7 +27,15 @@ export const CartContextProvider = ({children}) => {
 
                     
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
-                    checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+                    if(newItem.cantidad == 0) {
+                        SwalAlert.fire({
+                            icon: 'error',
+                            title: 'Epa!',
+                            text: 'Para continuar tenes que agregar al menos un producto'
+                        })
+                        } else {
+                        checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+                    }
                     
                 };           
                 
@@ -58,11 +67,14 @@ export const CartContextProvider = ({children}) => {
     return (
         <CartContext.Provider value={{
             cartList,
+            producto, 
+            setProducto,
             addToCart,
             clearCart,
             removeItem,
             totalPrice,
-            checkQuantity                    }}>
+            checkQuantity
+                                }}>
             {children} 
         </CartContext.Provider>
     )

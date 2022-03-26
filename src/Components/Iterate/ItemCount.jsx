@@ -15,11 +15,6 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
         onAdd(count)
         if (count <= 0) {
             e.preventDefault()
-            SwalAlert.fire({
-                icon: 'error',
-                title: 'Epa!',
-                text: 'Para continuar tenes que agregar al menos un producto'
-            })
         } 
     }
     
