@@ -16,11 +16,11 @@ const ItemDetailContainer = () => {
             const db = getFirestore()
             const queryDb = doc(db, 'productos', id)
             getDoc(queryDb)
-            .then(res => setProducto(res.data()))
+            .then(res => setProducto( {id: res.id, ...res.data()}))
             .catch(e => console.log(e))
         }
         getData()
-    }, [id])
+    }, [])
     return (
         <div>
             <ItemDetail producto={producto}/>

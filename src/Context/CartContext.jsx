@@ -20,25 +20,33 @@ export const CartContextProvider = ({children}) => {
                     return cartList.find((item) => item.id === id)
                     }
                     
+                    
                     const addQuantity = () => {
                         const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad += 1} : item);
                         return setCartList(itemQuantity)
+                        
                     }
-
                     
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
-                    checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+                    if(newItem.cantidad === 0 ) {
+                        SwalAlert.fire({
+                            icon: 'error',
+                            title: 'Epa!',
+                            text: 'Para continuar tenes que agregar al menos un producto'
+                        })
+            
+                    } else {
+                        checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
+                    }
                     
                 };           
-                
                 const removeItem = (id) => {
                     const filterCart = cartList.filter(item => item.id !== id)     
                     setCartList(filterCart)
                 }
-
+                
                 const checkQuantity = () => {
-                    return cartList.reduce((acc, value) => acc + (value.cantidad), 0)
-                    
+                    return cartList.reduce((acc, value) => acc + (value.cantidad), 0)               
                 }
 
                 const totalPrice = () => {
