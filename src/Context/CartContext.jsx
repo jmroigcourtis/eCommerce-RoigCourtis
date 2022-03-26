@@ -27,15 +27,7 @@ export const CartContextProvider = ({children}) => {
 
                     
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
-                    if(newItem.cantidad == 0) {
-                        SwalAlert.fire({
-                            icon: 'error',
-                            title: 'Epa!',
-                            text: 'Para continuar tenes que agregar al menos un producto'
-                        })
-                        } else {
-                        checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
-                    }
+                    checkForID(item.id) ? addQuantity(item.id, item.cantidad) : setCartList([...cartList, newItem])
                     
                 };           
                 

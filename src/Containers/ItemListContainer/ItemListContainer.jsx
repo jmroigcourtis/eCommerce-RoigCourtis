@@ -9,12 +9,12 @@ const ItemListContainer = () => {
 
                 const db = getFirestore()
                         const queryCollection = collection(db, 'productos')
-                        getDocs(queryCollection)
+                        const queryFilter = query(queryCollection, where('price', '>=', 1000), limit(4))
+                        getDocs(queryFilter)
                         .then(res => setProductos( res.docs.map(item => ({ id: item.id, ...item.data()}))))
                         .catch(error => console.error(error))
                         .finally(()=>setLoading(false))
         },[])
-        console.log(productos);
         return ( 
         <>
                 {loading ? <h1 className="d-flex justify-content-center loading animateLoading">Cargando...</h1> : 

@@ -11,10 +11,16 @@ const SwalAlert = withReactContent(Swal)
 const ItemCount = ({maxStock, minStock, onAdd}) => {
     const [count, setCount] = useState(0)
     const {cartList} = useContext(CartContext)
+    
     const addToCart = (e) => {
         onAdd(count)
         if (count <= 0) {
             e.preventDefault()
+            SwalAlert.fire({
+                icon: 'error',
+                title: 'Epa!',
+                text: 'Para continuar tenes que agregar al menos un producto'
+            })
         } 
     }
     

@@ -21,8 +21,6 @@ const ItemDetailContainer = () => {
         }
         getData()
     }, [id])
-
-    console.log(producto);
     return (
         <div>
             <ItemDetail producto={producto}/>
