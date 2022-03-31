@@ -16,13 +16,13 @@ export const CartContextProvider = ({children}) => {
 
             const addToCart = (item) => {
 
-                const checkForID = (id) => {
+                    const checkForID = (id) => {
                     return cartList.find((item) => item.id === id)
                     }
                     
                     
                     const addQuantity = () => {
-                        const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad += 1} : item);
+                        const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad ++} : item);
                         return setCartList(itemQuantity)
                         
                     }
@@ -45,9 +45,11 @@ export const CartContextProvider = ({children}) => {
                     const filterCart = cartList.filter(item => item.id !== id)     
                     setCartList(filterCart)
                 }
+
                 
                 const checkQuantity = () => {
-                    return cartList.reduce((acc, value) => acc + (value.cantidad), 0)               
+                   return cartList.reduce((acc, value) => acc + (value.cantidad), 0) 
+                                 
                 }
 
                 const totalPrice = () => {
@@ -59,10 +61,6 @@ export const CartContextProvider = ({children}) => {
 
     const clearCart = () => {
         setCartList([])
-        SwalAlert.fire({
-            icon: 'success',
-            title: 'Carrito eliminado!'
-        })
     }
 
     return (

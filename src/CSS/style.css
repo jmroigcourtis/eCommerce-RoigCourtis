@@ -386,6 +386,18 @@ a {
 .checkOutPage {
   animation: checkOutPage 1s; }
 
+.orderFormStyle {
+  margin-left: 770px;
+  width: 20%;
+  padding: 10px; }
+
+.orderButton {
+  margin: 20px;
+  margin-left: 100px;
+  background-color: #f55a5a;
+  color: white;
+  font-weight: 600; }
+
 .footer {
   background-color: #FFF9F9; }
 
