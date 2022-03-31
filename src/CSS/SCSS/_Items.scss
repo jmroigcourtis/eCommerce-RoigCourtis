@@ -1,3 +1,16 @@
+@keyframes showUpCard {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+.showUpCard {
+    animation: showUpCard 1s;
+}
 
 .btnDetail {
     margin-top: 5px;
@@ -13,4 +26,3 @@
 .btnDetail:hover {
     color: white;
 }
-

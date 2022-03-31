@@ -1,0 +1,12 @@
+@keyframes StartAnimation {
+    from {
+        transform: translateX(-800px);
+    }
+    to {
+        transform: translateX(1200px);
+    }
+}
+
+.pacman {
+    animation: StartAnimation 3s ease-out;
+}

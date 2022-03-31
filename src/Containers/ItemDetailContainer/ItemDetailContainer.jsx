@@ -1,4 +1,4 @@
-import { doc, getDoc, getFirestore, query, where } from "firebase/firestore"
+import { doc, getDoc, getFirestore} from "firebase/firestore"
 import {useEffect} from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../../Components/ItemDetail/ItemDetail"
@@ -9,7 +9,6 @@ import { CartContext } from "../../Context/CartContext"
 const ItemDetailContainer = () => {
     const {producto, setProducto} = useContext(CartContext)
     const {id} = useParams()
-    console.log(id);
 
     useEffect(()=> {
         const getData = ( ) => {

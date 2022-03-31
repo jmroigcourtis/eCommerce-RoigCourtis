@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartCheck } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import ButtonStyle from '../Iterate/Iterate.css'
+import ItemCountStyle from '../../CSS/style.css'
 
 const SwalAlert = withReactContent(Swal)
 
@@ -56,7 +56,7 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
             <p className="cartNumber text-center shadow">{count}</p>
             <button className="btnCart btn bg-none" onClick={Sumar}><p className="btnP">Agregar al carrito</p></button>
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center checkOutPage">
             <Link to='/checkOut'><button onClick={addToCart} className='checkOutBtn btn shadow'><CartCheck  style={{width: '35px', height: '35px'}} /></button></Link>
         </div>
         </>
