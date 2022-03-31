@@ -71,18 +71,7 @@ const CheckOut = () => {
         )
         .catch(e => console.log(e))
     }
-
-
-    const getOrderId = () => {
-            return <div><OrderAnimation/></div>
-    }
     
-
-
-
-
-
-
     return cartList.length === 0 ? 
     <div>
         <div className='d-flex justify-content-center'>
@@ -107,7 +96,7 @@ const CheckOut = () => {
                 <div className='CartDetail d-flex'>
                     <div className='CartProduct'>
                         <div className='ProductImage'>
-                            <img className='imgResize shadow' src={item.pictureURL}></img>
+                            <img className='imgResize shadow' src={item.image}></img>
                         </div>
                     </div>
 
@@ -133,7 +122,6 @@ const CheckOut = () => {
                         <p>Vaciar carrito</p>
                     </button>
                     <button className='checkoutCartButton btn' onClick={getOrderData}><p>Generar orden</p></button>
-                    <button className='checkoutCartButton btn' onClick={getOrderId}><p>Terminar compra</p></button>
                 </div>
     </div>
     }

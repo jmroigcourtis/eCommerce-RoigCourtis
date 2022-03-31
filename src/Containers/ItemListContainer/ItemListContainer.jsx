@@ -22,6 +22,7 @@ const ItemListContainer = () => {
                                 }, 2300)
                         })
         },[])
+        console.log(productos)
         return ( 
         <>
                 {loading ?  <LoadingAnimation  className='pacman'/>  : 
