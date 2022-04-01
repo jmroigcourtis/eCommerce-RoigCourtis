@@ -128,6 +128,44 @@
     color: rgb(245, 90, 90);
 }
 
+.buyerForm {
+    background-color: red;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+
+.buyerData {
+    margin-left: 130px;
+    background-color: white;
+    width: 50%;
+
+}
+
+.buyerData p {
+    margin-top: 40px;
+}
+
+.checkoutCartButton  {
+    width: 200px;
+    height: 70px;
+}
+
+.orderSuccess {
+    margin-left: 750px;
+    z-index: 3;
+}
+
+@keyframes showUpCart {
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}
+}
+
+.showUpCart {animation: showUpCart 1s ;}
+
+
+
 @keyframes ClearCartStartAnimation {
     0% {
         color: white;
