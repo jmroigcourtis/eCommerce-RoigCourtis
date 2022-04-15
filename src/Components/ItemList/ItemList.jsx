@@ -1,4 +1,5 @@
 import Item from "../../Components/Item/Items"
+import { Search } from "react-bootstrap-icons"
 import { useState } from "react"
 
 const ItemList = ( {productos} ) => {
@@ -6,7 +7,7 @@ const ItemList = ( {productos} ) => {
     return (
         <div style={{height: "50%"}}>
             <div className="d-flex justify-content-center mt-4">
-               <input type={'text'} placeholder={'Ejemplo: Auriculares, Funkos'} onChange={(event) => setSearch(event.target.value)}></input>
+               <input className="searchBar btn shadow" type={'text'} placeholder={'Ejemplo: Auriculares, Funkos'} onChange={(event) => setSearch(event.target.value)}></input><Search className="searchIcon"/>
             </div>
             <div className="d-flex flex-wrap justify-content-center itemBox">
                         {
