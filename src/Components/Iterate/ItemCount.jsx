@@ -10,6 +10,7 @@ const SwalAlert = withReactContent(Swal)
 
 const ItemCount = ({maxStock, minStock, onAdd}) => {
     const [count, setCount] = useState(0)
+    const {addProductQuantity, removeProductQuantity} = useContext(CartContext)
     
     const addToCart = (e) => {
         onAdd(count)
@@ -26,6 +27,7 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
     const Sumar = () => {
         if (count < maxStock) {
             setCount(count + 1)
+            addProductQuantity()
         } else if (count === maxStock) {
             setCount(count)
                 SwalAlert.fire({
@@ -37,6 +39,7 @@ const ItemCount = ({maxStock, minStock, onAdd}) => {
     const Restar = () => {
         if (count > minStock) {
             setCount(count - 1)
+            removeProductQuantity()
         } else {
             setCount(count)
             SwalAlert.fire({

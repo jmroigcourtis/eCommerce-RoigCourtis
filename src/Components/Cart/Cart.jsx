@@ -5,7 +5,6 @@ import CartStyle from '../../CSS/style.css'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
 import { CartXFill} from 'react-bootstrap-icons'
-// import { consumerData } from '../Consumer/consumer'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 
@@ -27,7 +26,7 @@ import EmptyCartAnimation from '../Animations/EmptyCart/EmptyCartAnimation'
 
 
 const CheckOut = () => {
-    const {cartList, clearCart, removeItem, totalPrice} = useContext(CartContext)
+    const {cartList, clearCart, removeItem, totalPrice, addProductQuantity, removeProductQuantity} = useContext(CartContext)
     const [orderId, setOrderId] = useState([])
     const [dataForm, setDataForm] = useState({
         email: '',
@@ -134,7 +133,7 @@ const CheckOut = () => {
                                 </div>
                                 <p className='ProductPrice'>$ {item.price}</p>
                                 <div>
-                                    <p className='ProductQuantity text-center shadow-sm'>Cantidad: {item.cantidad}</p>
+                                <p className='ProductQuantity text-center shadow-sm'><button className='btn productButton' onClick={addProductQuantity}>+</button>{item.cantidad}<button className='btn productButton' onClick={removeProductQuantity}>-</button></p>
                                 </div>
                             </div>
                 </div>

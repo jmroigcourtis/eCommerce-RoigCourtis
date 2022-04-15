@@ -1,4 +1,33 @@
 .cards {
     margin: 40px;
-    border-color: rgb(253, 192, 192);
+}
+
+.imgtest{
+    animation: endAnimation 1s forwards;
+}
+
+.imgtest:hover {
+    animation: startAnimation 1s forwards;
+}
+
+@keyframes startAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+
+}
+
+@keyframes endAnimation {
+    0% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }

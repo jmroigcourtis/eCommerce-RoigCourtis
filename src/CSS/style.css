@@ -127,10 +127,16 @@ a {
   border-color: black;
   border-radius: 20px;
   color: #f55a5a;
-  width: 150px;
+  width: 100px;
   font-size: 20px;
   font-weight: 600;
-  margin-left: 40px; }
+  margin-left: 60px; }
+
+.productButton {
+  color: #f55a5a;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px; }
 
 .cartQuantity {
   background-color: white;
@@ -251,8 +257,25 @@ a {
     background-color: #f55a5a; } }
 
 .cards {
-  margin: 40px;
-  border-color: #fdc0c0; }
+  margin: 40px; }
+
+.imgtest {
+  animation: endAnimation 1s forwards; }
+
+.imgtest:hover {
+  animation: startAnimation 1s forwards; }
+
+@keyframes startAnimation {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0.9); } }
+
+@keyframes endAnimation {
+  0% {
+    transform: scale(0.9); }
+  100% {
+    transform: scale(1); } }
 
 @keyframes showUpCard {
   0% {
@@ -282,7 +305,8 @@ a {
 
 .searchBar {
   border-radius: 5px;
-  background-color: white; }
+  background-color: white;
+  animation: searchAnimation 2s; }
 
 .searchIcon {
   margin-top: 10px;
@@ -290,6 +314,16 @@ a {
   height: 20px;
   color: black;
   opacity: 60%; }
+
+@keyframes searchAnimation {
+  0% {
+    opacity: 25%;
+    width: 0%; }
+  50% {
+    opacity: 50%;
+    width: 11.8%; }
+  100% {
+    opacity: 100%; } }
 
 .container {
   display: grid;

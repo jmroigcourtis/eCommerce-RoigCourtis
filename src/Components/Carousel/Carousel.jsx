@@ -16,13 +16,6 @@ const CarouselBanner = () => {
             alt="Second slide"
         />
         </Carousel.Item>
-        <Carousel.Item>
-        <img
-            className="d-block w-100"
-            src="https://i.ibb.co/ygrKKD8/funko-shop-store-malaysia.jpg"
-            alt="Third slide"
-        />
-        </Carousel.Item>
     </Carousel>
     }
 

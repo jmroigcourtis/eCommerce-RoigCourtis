@@ -13,7 +13,6 @@ export const CartContextProvider = ({children}) => {
     const [producto, setProducto] = useState([])
 
 
-    // useEffect(()=> {console.log(cartList)}, [cartList])
 
             const addToCart = (item) => {
                     const checkForID = (id) => {
@@ -21,9 +20,8 @@ export const CartContextProvider = ({children}) => {
                     }
                     
                     const addQuantity = () => {
-                        const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad ++} : item);
+                        const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad++} : item);
                         return setCartList(itemQuantity)
-                        
                     }
     
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
@@ -39,6 +37,7 @@ export const CartContextProvider = ({children}) => {
                     }
                     
                 };    
+
                 
                 const removeItem = (id) => {
                     const filterCart = cartList.filter(item => item.id !== id)     
@@ -51,12 +50,27 @@ export const CartContextProvider = ({children}) => {
                                  
                 }
 
-                const totalPrice = () => {
-                    return cartList.reduce( (acc, value) => acc + (value.cantidad * value.price), 0 ) 
+                const addProductQuantity = () => {
+                    const item = cartList.find(item => item.id)
+                    if(item.cantidad >= 1) {
+                        item.cantidad ++
+                        return setCartList([...cartList])
+                    }
+                }
+
+                const removeProductQuantity = () => {
+                    const item = cartList.find(item => item.id)
+                    if(item.cantidad >= 1) {
+                        item.cantidad --
+                        return setCartList([...cartList])
+                    } 
+
                 }
 
 
-    checkQuantity();
+                const totalPrice = () => {
+                    return cartList.reduce( (acc, value) => acc + (value.cantidad * value.price), 0 ) 
+                }
     totalPrice();
 
     const clearCart = () => {
@@ -70,6 +84,8 @@ export const CartContextProvider = ({children}) => {
             producto, 
             setProducto,
             addToCart,
+            addProductQuantity,
+            removeProductQuantity,
             clearCart,
             removeItem,
             totalPrice,

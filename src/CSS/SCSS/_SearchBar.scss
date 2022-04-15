@@ -1,6 +1,7 @@
 .searchBar {
     border-radius: 5px;
     background-color: white;
+    animation: searchAnimation 2s ;
 }
 
 .searchIcon {
@@ -9,4 +10,19 @@
     height: 20px;
     color: black;
     opacity: 60%;
+}
+
+@keyframes searchAnimation {
+    0% {
+        opacity: 25%;
+        width: 0%;
+    }
+    50% {
+        opacity: 50%;
+        width: 11.8%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
