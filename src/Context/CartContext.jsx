@@ -12,21 +12,20 @@ export const CartContextProvider = ({children}) => {
     const[cartList, setCartList] = useState([])
     const [producto, setProducto] = useState([])
 
-    useEffect(()=> {console.log(cartList)}, [cartList])
+
+    // useEffect(()=> {console.log(cartList)}, [cartList])
 
             const addToCart = (item) => {
-
                     const checkForID = (id) => {
                     return cartList.find((item) => item.id === id)
                     }
-                    
                     
                     const addQuantity = () => {
                         const itemQuantity = cartList.map(item => item.id ? {...item, cantidad: item.cantidad ++} : item);
                         return setCartList(itemQuantity)
                         
                     }
-                    
+    
                     const newItem = Object.assign(item, {cantidad: item.cantidad})
                     if(newItem.cantidad === 0 ) {
                         SwalAlert.fire({
@@ -55,6 +54,7 @@ export const CartContextProvider = ({children}) => {
                 const totalPrice = () => {
                     return cartList.reduce( (acc, value) => acc + (value.cantidad * value.price), 0 ) 
                 }
+
 
     checkQuantity();
     totalPrice();

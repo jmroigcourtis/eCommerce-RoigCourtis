@@ -1,7 +1,7 @@
 
 .Nav {
     width: auto;
-    height: 80px;
+    // height: 80px;
     padding-top: 5px;
 }
 
@@ -17,7 +17,6 @@
 
 p.NavP{
         font-weight: 400;
-        // color: rgb(245, 90, 90);
         color: white;
         margin: 0 5px;
     }
@@ -53,9 +52,6 @@ p.NavBox {
         background-color: white;
     }
 
-    .me-auto {
-        margin-top: 35px;
-    }
     .itemsInCart {
         color: rgb(245, 90, 90);
         margin-left: 45px;
@@ -65,4 +61,5 @@ p.NavBox {
         background-color: white;
         width: 25px;
     }
+
 

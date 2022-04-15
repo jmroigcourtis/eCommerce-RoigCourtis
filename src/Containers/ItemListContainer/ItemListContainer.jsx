@@ -8,27 +8,26 @@ import LoadingAnimation from "../../Components/Animations/Loading";
 const ItemListContainer = () => {        
         const [productos, setProductos] = useState([])
         const [loading, setLoading] = useState(true)
-        useEffect(()=>{
+        const db = getFirestore()
 
-                const db = getFirestore()
-                        const queryCollection = collection(db, 'productos')
-                        const queryFilter = query(queryCollection, where('price', '>=', 1000), limit(4))
-                        getDocs(queryFilter)
-                        .then(res => setProductos( res.docs.map(item => ({ id: item.id, ...item.data()}))))
-                        .catch(error => console.error(error))
-                        .finally(()=>{
-                                setTimeout(()=>{
-                                        setLoading(false)
-                                }, 2300)
-                        })
+        const getProds = (id) => {
+                const queryCollection = collection(db, id)
+                const queryFilter = query(queryCollection, where('price', '>', 1000))
+                getDocs(queryFilter)
+                .then(res => setProductos( res.docs.map(item => ({ id: item.id, ...item.data()}))))
+                .catch(error => console.error(error))
+                .finally(()=>{
+                        setTimeout(()=>{
+                                setLoading(false)
+                        }, 1000)
+                })
+        }
+        useEffect(()=>{
+                getProds('productos')
         },[])
-        console.log(productos)
         return ( 
         <>
-                {loading ?  <LoadingAnimation  className='pacman'/>  : 
-                <div>
-                        <ItemList className='showUpItems' productos = {productos}/>
-                </div> }
+                {loading ?  <LoadingAnimation  className='pacman'/>  : <ItemList className='showUpItems' productos = {productos}/>}
         </>
         )
 }

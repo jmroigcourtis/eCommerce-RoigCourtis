@@ -6,6 +6,7 @@ import ItemDetailContainer from './Containers/ItemDetailContainer/ItemDetailCont
 import CheckOut from './Components/Cart/Cart';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom' /*Este componente envuelve a la app que quiero que tenga navegabilidad */
 import {CartContextProvider} from './Context/CartContext' //Componente que retorna al método provider.
+import CarouselBanner from './Components/Carousel/Carousel';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div>
         <header>
           <NavBar/>
+          <CarouselBanner/>
           <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
             <Route path='/item/:id' element={<ItemDetailContainer/>}/>

@@ -5,7 +5,7 @@ import CartStyle from '../../CSS/style.css'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
 import { CartXFill} from 'react-bootstrap-icons'
-import { consumerData } from '../Consumer/consumer'
+// import { consumerData } from '../Consumer/consumer'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 
@@ -31,18 +31,21 @@ const CheckOut = () => {
     const [orderId, setOrderId] = useState([])
     const [dataForm, setDataForm] = useState({
         email: '',
+        checkEmail: '',
         name: '',
         phone: ''
     })
-    const MySwal = withReactContent(Swal)
 
-    const advice = async () => {
-        await MySwal.fire({
-            title: <strong>Good job!</strong>,
-            html: <i>You clicked the button!</i>,
-            icon: 'success'
-          })    
+    const consumerData = 
+    {buyer: 
+        {
+        name: dataForm.name, 
+        phone:dataForm.phone, 
+        email: dataForm.email
+        }
     }
+
+    const MySwal = withReactContent(Swal)
 
     const getOrderData = async (e) => {
         e.preventDefault();
@@ -77,7 +80,16 @@ const CheckOut = () => {
         addDoc(queryOrderCollection, order)
         .then(res => setOrderId(res.id))
         .catch(e => console.error(e))
-        .finally(()=>console.log('Termino'))
+        .finally(()=> dataForm.email === dataForm.checkEmail ? MySwal.fire({
+            title: 'Compra realizada!',
+            text: `El ID de tu compra es: ${orderId}. 
+            Hemos enviado un comprobante de compra a ${dataForm.email}  `, 
+            icon: 'success'
+        }) :  MySwal.fire({
+            title: 'Los emails no coinciden',
+            text: `Por favor, revisa que ambos emails sean identicos.`,
+            icon: 'error'
+        }) )
     }
 
     const handleChange = (e) => {
@@ -166,6 +178,16 @@ const CheckOut = () => {
                         placeholder='email' 
                         value={dataForm.email}
                         onChange={handleChange}
+                        required
+                        />
+                    <Form.Label>Repitir email</Form.Label> 
+                    <Form.Control 
+                        type='email' 
+                        name='checkEmail'
+                        placeholder='repetir email' 
+                        value={dataForm.checkEmail}
+                        onChange={handleChange}
+                        required
                         />
                     </Form.Group>
                     {orderId.length !== '' && <p className='text-center m-2'>ID: {orderId}</p>}
@@ -174,27 +196,6 @@ const CheckOut = () => {
 
             </Card>
 
-            {/* <Card className='SignupStyle shadow-sm'>
-                    <Card.Body>
-                        <h2 className='text-center mb-4'>Sign Up</h2>
-                        <Form>
-                            <Form.Group id="email">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control onChange={(event) => {
-                                    setRegisterEmail(event.target.value)
-                                }} 
-                                    type='email'/>
-                            </Form.Group>
-                            <Form.Group id="password">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type='password' onChange={(event) => {
-                                    setRegisterPassword(event.target.value)
-                                }} />
-                            </Form.Group>
-                        </Form>
-                        <Button onClick={register}  type='submit' className='w-100 mt-4'>Sign Up</Button>
-                        </Card.Body>
-                    </Card> */}
                     <div className='d-flex justify-content-center'>
                         <p className='ProductsTotalPrice'>Total: ${totalPrice()}</p><br></br>
                     </div>

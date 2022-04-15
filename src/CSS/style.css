@@ -23,7 +23,6 @@ h1 {
 
 .Nav {
   width: auto;
-  height: 80px;
   padding-top: 5px; }
 
 .NavBackground {
@@ -65,9 +64,6 @@ p.NavBox:focus::after {
 p.NavP:focus {
   background-color: white; }
 
-.me-auto {
-  margin-top: 35px; }
-
 .itemsInCart {
   color: #f55a5a;
   margin-left: 45px;
@@ -79,6 +75,12 @@ p.NavP:focus {
 
 .CartWidget {
   animation: showCart 1s; }
+
+.CartWidget span {
+  font-size: 20px;
+  margin-left: 10px;
+  color: white;
+  border-radius: 100%; }
 
 @keyframes showCart {
   from {
@@ -201,6 +203,37 @@ a {
   height: 50px;
   color: #f55a5a; }
 
+.buyerForm {
+  background-color: red;
+  width: 500px;
+  height: 500px;
+  border-radius: 20px; }
+
+.buyerData {
+  margin-left: 130px;
+  background-color: white;
+  width: 50%; }
+
+.buyerData p {
+  margin-top: 40px; }
+
+.checkoutCartButton {
+  width: 200px;
+  height: 70px; }
+
+.orderSuccess {
+  margin-left: 750px;
+  z-index: 3; }
+
+@keyframes showUpCart {
+  0% {
+    opacity: 0%; }
+  100% {
+    opacity: 100%; } }
+
+.showUpCart {
+  animation: showUpCart 1s; }
+
 @keyframes ClearCartStartAnimation {
   0% {
     color: white;
@@ -241,6 +274,11 @@ a {
 
 .btnDetail:hover {
   color: white; }
+
+.itemBox {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%; }
 
 .container {
   display: grid;

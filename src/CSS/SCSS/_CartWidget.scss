@@ -2,6 +2,13 @@
     animation: showCart 1s ;
 }
 
+.CartWidget span {
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+    border-radius: 100%;
+}
+
 
 @keyframes showCart {
     from {

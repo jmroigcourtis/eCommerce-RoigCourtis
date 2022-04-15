@@ -26,3 +26,13 @@
 .btnDetail:hover {
     color: white;
 }
+
+.itemBox {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+}
+
+// .itemBox>*{
+//     flex: 20px;
+// }

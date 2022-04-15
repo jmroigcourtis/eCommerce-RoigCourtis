@@ -2,11 +2,10 @@ import ShowUnits from "../../Components/CartWidget/CartWidget";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
-import {Joystick} from 'react-bootstrap-icons'
-import { Navigate, NavLink } from "react-router-dom";
-import { useContext } from "react";
+import {Joystick, PersonCircle} from 'react-bootstrap-icons'
+import { Link, Navigate, NavLink } from "react-router-dom";
+import { useContext} from "react";
 import { CartContext } from "../../Context/CartContext";
-
 const NavBar = () => {
     const {cartList} = useContext(CartContext)
         return <>
@@ -18,14 +17,11 @@ const NavBar = () => {
                             
                         </Navbar.Brand>
                     </NavLink>
-                        <Nav className="me-auto">
+                        <Nav >
                             <NavLink to='/inicio'><p className=" fs-5 NavP NavBox">Inicio</p></NavLink>
-                            <NavLink to='/'><p className="fs-5 NavP NavBox">Productos</p></NavLink>
-                            <NavLink to='/'><p className="fs-5  NavP NavBox" >Sucursales</p></NavLink>
-                            <NavLink to='/'><p className="fs-5  NavP NavBox" >Ingresá</p></NavLink>
-                            <NavLink to='/checkOut'>
-                                {cartList.length <= 0 ? null : <ShowUnits/>}
-                                </NavLink>
+                            <NavLink to='/'><p className="fs-5 NavP NavBox productList">Productos</p></NavLink>
+                            <NavLink to='/'><p className="fs-5  NavP NavBox" >Ingresa <PersonCircle/></p></NavLink>
+                            <NavLink to='/checkOut'>{cartList.length <= 0 ? null : <ShowUnits/>}</NavLink>
                         </Nav>
                 </Container>
             </Navbar>
