@@ -1,4 +1,3 @@
-import CartContextStyle from '../Context/CartContext.css'
 import {createContext, useState, useEffect} from 'react'
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -44,28 +43,28 @@ export const CartContextProvider = ({children}) => {
                     setCartList(filterCart)
                 }
 
-                
-                const checkQuantity = () => {
-                   return cartList.reduce((acc, value) => acc + (value.cantidad), 0) 
-                                 
-                }
-
-                const addProductQuantity = () => {
-                    const item = cartList.find(item => item.id)
+                const addProductQuantity = (id) => {
+                    const item = cartList.find(item => item.id === id )
                     if(item.cantidad >= 1) {
                         item.cantidad ++
                         return setCartList([...cartList])
                     }
                 }
 
-                const removeProductQuantity = () => {
-                    const item = cartList.find(item => item.id)
+                const removeProductQuantity = (id) => {
+                    const item = cartList.find(item => item.id === id )
                     if(item.cantidad >= 1) {
                         item.cantidad --
                         return setCartList([...cartList])
                     } 
 
                 }
+                
+                const checkQuantity = () => {
+                   return cartList.reduce((acc, value) => acc + (value.cantidad), 0) 
+                                 
+                }
+
 
 
                 const totalPrice = () => {

@@ -125,24 +125,21 @@ const CheckOut = () => {
                         <div className='ProductImage'>
                             <img className='imgResize shadow' src={item.image}></img>
                         </div>
+                        <CartXFill className='CartX' onClick={ () => removeItem( item.id ) }/>
                     </div>
 
-                            <div className='PriceDetail'>
+                            <div className='PriceDetail d-flex'>
                                 <div className='ProductTitle'>
                                     <h2>{item.title}</h2>
                                 </div>
-                                <p className='ProductPrice'>$ {item.price}</p>
-                                <div>
-                                <p className='ProductQuantity text-center shadow-sm'><button className='btn productButton' onClick={addProductQuantity}>+</button>{item.cantidad}<button className='btn productButton' onClick={removeProductQuantity}>-</button></p>
-                                </div>
+                                <p className='ProductQuantity text-center shadow-sm'><button className='btn productButton' onClick={()=>removeProductQuantity(item.id)}>-</button>{item.cantidad}<button className='btn productButton' onClick={()=>addProductQuantity(item.id)}>+</button></p>
+                                <p className='ProductPrice text-center'>$ {item.price}</p>
                             </div>
                 </div>
-                        <CartXFill className='CartX' onClick={ () => removeItem( item.id ) }>Eliminar del carrito</CartXFill>
 
             </>
         )
         })}
-
         <Card className='orderFormStyle shadow-sm'>
 
             <Form onSubmit={getOrderData} >
@@ -203,7 +200,7 @@ const CheckOut = () => {
                         <p>Vaciar carrito</p>
                     </button>
                 </div>
-    </div>
+        </div>
     }
 
 export default CheckOut
