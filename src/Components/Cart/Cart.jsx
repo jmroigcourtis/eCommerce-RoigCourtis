@@ -4,7 +4,7 @@ import cartStyle from '../Cart/CartStyle.css'
 import CartStyle from '../../CSS/style.css'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
-import { CartXFill} from 'react-bootstrap-icons'
+import { X, BagCheck } from 'react-bootstrap-icons'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 
@@ -116,90 +116,93 @@ const CheckOut = () => {
     
     :  
 
-    <div className='showUpCart'>
+
+    <div className='showUpCart d-flex row'>
+        <h2 className='orderTitle text-center'>Mi orden</h2>
         {cartList.map((item) => {
         return (
             <>
-                <div className='CartDetail d-flex'>
+                <div className='CartDetail d-flex shadow-sm row'>
                     <div className='CartProduct'>
                         <div className='ProductImage'>
-                            <img className='imgResize shadow' src={item.image}></img>
+                            <img className='imgResize shadow-sm' src={item.image}></img>
                         </div>
-                        <CartXFill className='CartX' onClick={ () => removeItem( item.id ) }/>
                     </div>
 
-                            <div className='PriceDetail d-flex'>
+                            <div className='PriceDetail d-flex col'>
                                 <div className='ProductTitle'>
                                     <h2>{item.title}</h2>
                                 </div>
                                 <p className='ProductQuantity text-center shadow-sm'><button className='btn productButton' onClick={()=>removeProductQuantity(item.id)}>-</button>{item.cantidad}<button className='btn productButton' onClick={()=>addProductQuantity(item.id)}>+</button></p>
-                                <p className='ProductPrice text-center'>$ {item.price}</p>
+                                <p className='ProductPrice'>$ {item.price}</p>
+                                <X className='CartX' onClick={ () => removeItem( item.id ) }/>
                             </div>
                 </div>
+                
 
-            </>
+            </>                        
         )
-        })}
-        <Card className='orderFormStyle shadow-sm'>
+    })}
+                            <div className='formStyle'>
 
-            <Form onSubmit={getOrderData} >
-                    <Form.Group id="name">
-                        <Form.Label>Nombre</Form.Label> 
-                        <Form.Control
-                            type='text' 
-                            name='name' 
-                            placeholder='name' 
-                            value={dataForm.name}
-                            onChange={handleChange}
-                            />
-                    </Form.Group>
-
-                    <Form.Group id="phone">
-                        <Form.Label>Teléfono</Form.Label> 
-                        <Form.Control 
-                            type='text' 
-                            name='phone'
-                            placeholder='tel' 
-                            value={dataForm.phone}
-                            onChange={handleChange}
-                            />
-                    </Form.Group>
-
-                    <Form.Group id="email">
-
-                    <Form.Label>Email</Form.Label> 
-                    <Form.Control 
-                        type='email' 
-                        name='email'
-                        placeholder='email' 
-                        value={dataForm.email}
-                        onChange={handleChange}
-                        required
-                        />
-                    <Form.Label>Repitir email</Form.Label> 
-                    <Form.Control 
-                        type='email' 
-                        name='checkEmail'
-                        placeholder='repetir email' 
-                        value={dataForm.checkEmail}
-                        onChange={handleChange}
-                        required
-                        />
-                    </Form.Group>
-                    {orderId.length !== '' && <p className='text-center m-2'>ID: {orderId}</p>}
-                    <button className='btn orderButton'>Terminar Compra</button>
-            </Form>
-
-            </Card>
-
+                                <Card className='orderFormStyle shadow-sm col'>
+                                    <BagCheck className='bagCheck'/>
+                                    <Form onSubmit={getOrderData} >
+                                            <Form.Group id="name">
+                                                <Form.Label>Nombre</Form.Label> 
+                                                <Form.Control
+                                                    type='text' 
+                                                    name='name' 
+                                                    placeholder='name' 
+                                                    value={dataForm.name}
+                                                    onChange={handleChange}
+                                                    />
+                                            </Form.Group>
+                        
+                                            <Form.Group id="phone">
+                                                <Form.Label>Teléfono</Form.Label> 
+                                                <Form.Control 
+                                                    type='text' 
+                                                    name='phone'
+                                                    placeholder='tel' 
+                                                    value={dataForm.phone}
+                                                    onChange={handleChange}
+                                                    />
+                                            </Form.Group>
+                        
+                                            <Form.Group id="email">
+                        
+                                            <Form.Label>Email</Form.Label> 
+                                            <Form.Control 
+                                                type='email' 
+                                                name='email'
+                                                placeholder='email' 
+                                                value={dataForm.email}
+                                                onChange={handleChange}
+                                                required
+                                                />
+                                            <Form.Label>Repetir email</Form.Label> 
+                                            <Form.Control 
+                                                type='email' 
+                                                name='checkEmail'
+                                                placeholder='repetir email' 
+                                                value={dataForm.checkEmail}
+                                                onChange={handleChange}
+                                                required
+                                                />
+                                            </Form.Group>
+                                            {orderId.length !== '' && <p className='text-center m-2'>ID: {orderId}</p>}
+                                            <button className='btn orderButton'>Terminar Compra</button>
+                                            <button className='clearCartButton btn' onClick={clearCart}>
+                                            <p>Vaciar carrito</p>
+                                        </button>
+                                    </Form>
+                        
+                                    </Card>
+                            </div>
                     <div className='d-flex justify-content-center'>
                         <p className='ProductsTotalPrice'>Total: ${totalPrice()}</p><br></br>
                     </div>
-                <div className='d-flex justify-content-center'>
-                    <button className='clearCartButton btn' onClick={clearCart}>
-                        <p>Vaciar carrito</p>
-                    </button>
-                </div>
         </div>
     }
 
