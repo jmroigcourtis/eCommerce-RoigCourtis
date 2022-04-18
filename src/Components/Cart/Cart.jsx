@@ -1,7 +1,7 @@
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import OrderAnimation from '../Animations/OrderComplete/Order'
-import cartStyle from '../Cart/CartStyle.css'
-import CartStyle from '../../CSS/style.css'
+// import cartStyle from '../Cart/CartStyle.css'
+// import CartStyle from '../../CSS/style.css'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
 import { X, BagCheck } from 'react-bootstrap-icons'
@@ -34,6 +34,10 @@ const CheckOut = () => {
         name: '',
         phone: ''
     })
+
+    useEffect(()=>{
+        console.log(orderId)
+    }, [orderId])
 
     const consumerData = 
     {buyer: 
@@ -80,11 +84,10 @@ const CheckOut = () => {
         .then(res => setOrderId(res.id))
         .catch(e => console.error(e))
         .finally(()=> dataForm.email === dataForm.checkEmail ? MySwal.fire({
-            title: 'Compra realizada!',
-            text: `El ID de tu compra es: ${orderId}. 
-            Hemos enviado un comprobante de compra a ${dataForm.email}  `, 
+            title: 'Orden realizada!',
             icon: 'success'
-        }) :  MySwal.fire({
+        }) :  
+        MySwal.fire({
             title: 'Los emails no coinciden',
             text: `Por favor, revisa que ambos emails sean identicos.`,
             icon: 'error'
@@ -191,7 +194,7 @@ const CheckOut = () => {
                                                 required
                                                 />
                                             </Form.Group>
-                                            {orderId.length !== '' && <p className='text-center m-2'>ID: {orderId}</p>}
+                                            {orderId.length !== '' && <p className='text-center m-2'>ID: {orderId}</p>}                                            
                                             <button className='btn orderButton'>Terminar Compra</button>
                                             <button className='clearCartButton btn' onClick={clearCart}>
                                             <p>Vaciar carrito</p>
