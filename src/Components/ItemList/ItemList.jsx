@@ -2,7 +2,7 @@ import Item from "../../Components/Item/Items"
 import { Search } from "react-bootstrap-icons"
 import { useState } from "react"
 
-const ItemList = ( {productos} ) => {
+const ItemList = ( {products} ) => {
     const [search, setSearch] = useState('')
     return (
         <div style={{height: "50%"}}>
@@ -11,7 +11,7 @@ const ItemList = ( {productos} ) => {
             </div>
             <div className="d-flex flex-wrap justify-content-center itemBox">
                         {
-                        productos.filter((prod) => {
+                        products.filter((prod) => {
                             if(search === '') {
                                 return prod
                             } else if (prod.title.toLowerCase().includes(search.toLowerCase())) {

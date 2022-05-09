@@ -3,7 +3,7 @@ import HarryPotterOwl from '../Images/HarryPotterOwl.jpg'
 import LukeSkyWalkerGrogu from '../Images/LukeSkyWalkerGrogu.jpg'
 import DrStrangeWhatIf from '../Images/DrStrangeWhatIf.jpg'
 
-export const productos = [
+export const products = [
             {id : '1', title : "Iron Man", description : 'Funko Pop representativo de la pelea entre IronMan y Thanos', price: '1200', stock: 'Disponible (5)', image: IronMan},
             {id : '2', title : "Harry Potter", description : 'Funko Pop representativo de Harry Potter y Hedwig', price: '2500', stock: 'Disponible (5)', image: HarryPotterOwl},
             {id : '3', title : "Luke Skywalker", description : 'Funko Pop representativo de la serie "The Mandalorian" ', price: '2000', stock:'Disponible (5)', image: LukeSkyWalkerGrogu},
@@ -13,10 +13,10 @@ export const productos = [
     
 export const getFetch = new Promise ((resolve, reject) => {
         
-        let data = productos
-        if(data === productos) {
+        let data = products
+        if(data === products) {
             setTimeout(() => {
-                resolve(productos)
+                resolve(products)
             }, 2000) 
         }else {
             setTimeout(() => {

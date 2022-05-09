@@ -1,7 +1,4 @@
 import {useContext, useEffect, useState} from 'react'
-import OrderAnimation from '../Animations/OrderComplete/Order'
-// import cartStyle from '../Cart/CartStyle.css'
-// import CartStyle from '../../CSS/style.css'
 import { CartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
 import { X, BagCheck } from 'react-bootstrap-icons'
@@ -36,7 +33,6 @@ const CheckOut = () => {
     })
 
     useEffect(()=>{
-        console.log(orderId)
     }, [orderId])
 
     const consumerData = 
@@ -128,7 +124,7 @@ const CheckOut = () => {
                 <div className='CartDetail d-flex shadow-sm row'>
                     <div className='CartProduct'>
                         <div className='ProductImage'>
-                            <img className='imgResize shadow-sm' src={item.image}></img>
+                            <img className='imgResize shadow-sm' src={item.image} alt='Imagen'></img>
                         </div>
                     </div>
 

@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import {Joystick, PersonCircle} from 'react-bootstrap-icons'
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext} from "react";
 import { CartContext } from "../../Context/CartContext";
 const NavBar = () => {
