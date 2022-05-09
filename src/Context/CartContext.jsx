@@ -96,4 +96,3 @@ export const CartContextProvider = ({children}) => {
 }
 
 
-/*El prop CHILDREN adquiere las propiedades de todos los nodos hijos */
